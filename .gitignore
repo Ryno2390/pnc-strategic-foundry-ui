@@ -1,0 +1,96 @@
+# ===================
+# Node.js / Frontend
+# ===================
+node_modules/
+dist/
+dist-ssr/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ===================
+# Python / Backend
+# ===================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+*.egg-info/
+fine_tuning_env/
+
+# ===================
+# IDE / Editor
+# ===================
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ===================
+# OS
+# ===================
+.DS_Store
+Thumbs.db
+
+# ===================
+# Logs
+# ===================
+logs/
+*.log
+
+# ===================
+# Model Artifacts (too large for git)
+# ===================
+Anonymizer/s1_adapter/
+Anonymizer/adapters/
+models/
+checkpoints/
+outputs/
+*.safetensors
+*.bin
+*.gguf
+
+# ===================
+# Temporary / Sensitive
+# ===================
+*.tmp
+*.temp
+*.env
+.env.*
+.env.local
+credentials.json
+
+# ===================
+# Generated traces (can be regenerated)
+# ===================
+Anonymizer/.flywheel_state.json
+Anonymizer/graded_traces.jsonl
+Anonymizer/s1_traces.jsonl
+Anonymizer/pnc_reasoning_traces_t1.jsonl
+
+# ===================
+# Swift / Xcode
+# ===================
+.build/
+*.xcuserstate
+xcuserdata/
+DerivedData/
+.swiftpm/xcode/package.xcworkspace/xcuserdata/
+
+# ===================
+# UI symlinks
+# ===================
+UI

@@ -1,0 +1,525 @@
+[
+  {
+    "unified_id": "UNI-0001",
+    "canonical_name": "WILLIAM T CHEN",
+    "entity_type": "PERSON",
+    "source_records": [
+      {
+        "source": "CONSUMER_CORE",
+        "id": "CON-005"
+      },
+      {
+        "source": "WEALTH_ADVISORY",
+        "id": "WM-004"
+      }
+    ],
+    "tax_id_last4": "2345",
+    "date_of_birth": "1990-12-01",
+    "addresses": [
+      {
+        "street_line1": "321 RIVER RD",
+        "street_line2": "UNIT 12",
+        "city": "SEWICKLEY",
+        "state": "PA",
+        "zip5": "15143",
+        "zip4": "",
+        "full_address": "321 RIVER RD UNIT 12 SEWICKLEY PA 15143",
+        "original": "321 River Road, Unit 12, Sewickley, PA 15143"
+      },
+      {
+        "street_line1": "321 RIVER RD",
+        "street_line2": "UNIT 12",
+        "city": "SEWICKLEY",
+        "state": "PA",
+        "zip5": "15143",
+        "zip4": "",
+        "full_address": "321 RIVER RD UNIT 12 SEWICKLEY PA 15143",
+        "original": "321 River Rd, Unit 12, , Sewickley, PA 15143"
+      }
+    ],
+    "phones": [
+      "(724) 555-8888"
+    ],
+    "emails": [
+      "will.chen@techstartup.io"
+    ],
+    "holdings": {},
+    "relationships": []
+  },
+  {
+    "unified_id": "UNI-0002",
+    "canonical_name": "JANE MARIE SMITH",
+    "entity_type": "PERSON",
+    "source_records": [
+      {
+        "source": "WEALTH_ADVISORY",
+        "id": "WM-002"
+      },
+      {
+        "source": "CONSUMER_CORE",
+        "id": "CON-002"
+      }
+    ],
+    "tax_id_last4": "5678",
+    "date_of_birth": "1977-08-22",
+    "addresses": [
+      {
+        "street_line1": "123 MAIN ST APT 4B",
+        "street_line2": "",
+        "city": "PITTSBURGH",
+        "state": "PA",
+        "zip5": "15213",
+        "zip4": "4521",
+        "full_address": "123 MAIN ST APT 4B PITTSBURGH PA 15213",
+        "original": "123 Main St #4B, , Pittsburgh, Pennsylvania 15213-4521"
+      },
+      {
+        "street_line1": "123 MAIN ST",
+        "street_line2": "APT 4B",
+        "city": "PITTSBURGH",
+        "state": "PA",
+        "zip5": "15213",
+        "zip4": "4521",
+        "full_address": "123 MAIN ST APT 4B PITTSBURGH PA 15213",
+        "original": "123 Main Street, Apt. 4B, , Pittsburgh, Pennsylvania 15213-4521"
+      }
+    ],
+    "phones": [
+      "(412) 555-9876"
+    ],
+    "emails": [
+      "jane.smith@outlook.com"
+    ],
+    "holdings": {},
+    "relationships": []
+  },
+  {
+    "unified_id": "UNI-0003",
+    "canonical_name": "JOHN R SMITH",
+    "entity_type": "PERSON",
+    "source_records": [
+      {
+        "source": "CONSUMER_CORE",
+        "id": "CON-001"
+      }
+    ],
+    "tax_id_last4": "1234",
+    "date_of_birth": "1975-03-15",
+    "addresses": [
+      {
+        "street_line1": "123 MAIN ST",
+        "street_line2": "APT 4B",
+        "city": "PITTSBURGH",
+        "state": "PA",
+        "zip5": "15213",
+        "zip4": "",
+        "full_address": "123 MAIN ST APT 4B PITTSBURGH PA 15213",
+        "original": "123 Main St, Apt 4B, Pittsburgh, PA 15213"
+      }
+    ],
+    "phones": [
+      "(412) 555-1234"
+    ],
+    "emails": [
+      "jsmith@gmail.com"
+    ],
+    "holdings": {},
+    "relationships": []
+  },
+  {
+    "unified_id": "UNI-0004",
+    "canonical_name": "ROBERT JOHNSON",
+    "entity_type": "PERSON",
+    "source_records": [
+      {
+        "source": "CONSUMER_CORE",
+        "id": "CON-003"
+      }
+    ],
+    "tax_id_last4": "3456",
+    "date_of_birth": "1968-11-03",
+    "addresses": [
+      {
+        "street_line1": "456 OAK AVE",
+        "street_line2": "STE 100",
+        "city": "PHILADELPHIA",
+        "state": "PA",
+        "zip5": "19103",
+        "zip4": "",
+        "full_address": "456 OAK AVE STE 100 PHILADELPHIA PA 19103",
+        "original": "456 Oak Avenue, Suite 100, Philadelphia, PA 19103"
+      }
+    ],
+    "phones": [
+      "(215) 555-4567"
+    ],
+    "emails": [
+      "rjohnson@yahoo.com"
+    ],
+    "holdings": {},
+    "relationships": []
+  },
+  {
+    "unified_id": "UNI-0005",
+    "canonical_name": "MARIA E GARCIA-LOPEZ",
+    "entity_type": "PERSON",
+    "source_records": [
+      {
+        "source": "CONSUMER_CORE",
+        "id": "CON-004"
+      }
+    ],
+    "tax_id_last4": "7890",
+    "date_of_birth": "1982-06-15",
+    "addresses": [
+      {
+        "street_line1": "789 ELM ST",
+        "street_line2": "",
+        "city": "PITTSBURGH",
+        "state": "PA",
+        "zip5": "15206",
+        "zip4": "",
+        "full_address": "789 ELM ST PITTSBURGH PA 15206",
+        "original": "789 Elm Street, , pittsburgh, pa 15206"
+      }
+    ],
+    "phones": [
+      "(412) 555-3333"
+    ],
+    "emails": [
+      "maria.garcia@company.com"
+    ],
+    "holdings": {},
+    "relationships": []
+  },
+  {
+    "unified_id": "UNI-0006",
+    "canonical_name": "SARAH K O'BRIEN",
+    "entity_type": "PERSON",
+    "source_records": [
+      {
+        "source": "CONSUMER_CORE",
+        "id": "CON-006"
+      }
+    ],
+    "tax_id_last4": "6789",
+    "date_of_birth": "1985-05-28",
+    "addresses": [
+      {
+        "street_line1": "555 HIGHLAND AVE",
+        "street_line2": "",
+        "city": "FOX CHAPEL",
+        "state": "PA",
+        "zip5": "15238",
+        "zip4": "",
+        "full_address": "555 HIGHLAND AVE FOX CHAPEL PA 15238",
+        "original": "555 Highland Ave, , Fox Chapel, PA 15238"
+      }
+    ],
+    "phones": [
+      "(412) 555-6666"
+    ],
+    "emails": [
+      "sarah.obrien@lawfirm.com"
+    ],
+    "holdings": {},
+    "relationships": []
+  },
+  {
+    "unified_id": "UNI-0007",
+    "canonical_name": "SMITH CONSULTING LLC",
+    "entity_type": "BUSINESS",
+    "source_records": [
+      {
+        "source": "COMMERCIAL_CORE",
+        "id": "BIZ-001"
+      }
+    ],
+    "tax_id_last4": "4567",
+    "date_of_birth": null,
+    "addresses": [
+      {
+        "street_line1": "500 GRANT ST",
+        "street_line2": "FL 22",
+        "city": "PITTSBURGH",
+        "state": "PA",
+        "zip5": "15219",
+        "zip4": "",
+        "full_address": "500 GRANT ST FL 22 PITTSBURGH PA 15219",
+        "original": "500 Grant Street, Floor 22, , Pittsburgh, PA 15219"
+      }
+    ],
+    "phones": [
+      "(412) 555-1234"
+    ],
+    "emails": [
+      "john@smithconsulting.com"
+    ],
+    "holdings": {},
+    "relationships": []
+  },
+  {
+    "unified_id": "UNI-0008",
+    "canonical_name": "JOHNSON PROPERTIES INC",
+    "entity_type": "BUSINESS",
+    "source_records": [
+      {
+        "source": "COMMERCIAL_CORE",
+        "id": "BIZ-002"
+      }
+    ],
+    "tax_id_last4": "6543",
+    "date_of_birth": null,
+    "addresses": [
+      {
+        "street_line1": "456 OAK AVE",
+        "street_line2": "STE 100",
+        "city": "PHILADELPHIA",
+        "state": "PA",
+        "zip5": "19103",
+        "zip4": "2345",
+        "full_address": "456 OAK AVE STE 100 PHILADELPHIA PA 19103",
+        "original": "456 Oak Ave, Ste 100, , Philadelphia, Pennsylvania 19103-2345"
+      }
+    ],
+    "phones": [
+      "(215) 555-4567"
+    ],
+    "emails": [
+      "bob@johnsonproperties.com"
+    ],
+    "holdings": {},
+    "relationships": []
+  },
+  {
+    "unified_id": "UNI-0009",
+    "canonical_name": "CHEN TECHNOLOGY VENTURES LLC",
+    "entity_type": "BUSINESS",
+    "source_records": [
+      {
+        "source": "COMMERCIAL_CORE",
+        "id": "BIZ-003"
+      }
+    ],
+    "tax_id_last4": "1234",
+    "date_of_birth": null,
+    "addresses": [
+      {
+        "street_line1": "321 RIVER RD",
+        "street_line2": "UNIT 12",
+        "city": "SEWICKLEY",
+        "state": "PA",
+        "zip5": "15143",
+        "zip4": "",
+        "full_address": "321 RIVER RD UNIT 12 SEWICKLEY PA 15143",
+        "original": "321 River Rd., Unit 12, , Sewickley, PA 15143"
+      }
+    ],
+    "phones": [
+      "(724) 555-8888"
+    ],
+    "emails": [
+      "will@chentech.io"
+    ],
+    "holdings": {},
+    "relationships": []
+  },
+  {
+    "unified_id": "UNI-0010",
+    "canonical_name": "HIGHLAND LEGAL PARTNERS PLLC",
+    "entity_type": "BUSINESS",
+    "source_records": [
+      {
+        "source": "COMMERCIAL_CORE",
+        "id": "BIZ-004"
+      }
+    ],
+    "tax_id_last4": "8899",
+    "date_of_birth": null,
+    "addresses": [
+      {
+        "street_line1": "ONE PPG PL",
+        "street_line2": "STE 3500",
+        "city": "PITTSBURGH",
+        "state": "PA",
+        "zip5": "15222",
+        "zip4": "",
+        "full_address": "ONE PPG PL STE 3500 PITTSBURGH PA 15222",
+        "original": "One PPG Place, Suite 3500, , Pittsburgh, PA 15222"
+      }
+    ],
+    "phones": [
+      "(412) 555-6666"
+    ],
+    "emails": [
+      "sobrien@highlandlegal.com"
+    ],
+    "holdings": {},
+    "relationships": []
+  },
+  {
+    "unified_id": "UNI-0011",
+    "canonical_name": "GARCIA RESTAURANT GROUP LLC",
+    "entity_type": "BUSINESS",
+    "source_records": [
+      {
+        "source": "COMMERCIAL_CORE",
+        "id": "BIZ-005"
+      }
+    ],
+    "tax_id_last4": "3322",
+    "date_of_birth": null,
+    "addresses": [
+      {
+        "street_line1": "2100 MURRAY AVE",
+        "street_line2": "",
+        "city": "PITTSBURGH",
+        "state": "PA",
+        "zip5": "15217",
+        "zip4": "",
+        "full_address": "2100 MURRAY AVE PITTSBURGH PA 15217",
+        "original": "2100 Murray Avenue, , Pittsburgh, PA 15217"
+      }
+    ],
+    "phones": [
+      "(412) 555-3333"
+    ],
+    "emails": [
+      "maria@casagarcia.com"
+    ],
+    "holdings": {},
+    "relationships": []
+  },
+  {
+    "unified_id": "UNI-0012",
+    "canonical_name": "JONATHAN R SMITH",
+    "entity_type": "PERSON",
+    "source_records": [
+      {
+        "source": "WEALTH_ADVISORY",
+        "id": "WM-001"
+      }
+    ],
+    "tax_id_last4": "1234",
+    "date_of_birth": "1975-03-15",
+    "addresses": [
+      {
+        "street_line1": "123 MAIN ST",
+        "street_line2": "APT 4B",
+        "city": "PITTSBURGH",
+        "state": "PA",
+        "zip5": "15213",
+        "zip4": "",
+        "full_address": "123 MAIN ST APT 4B PITTSBURGH PA 15213",
+        "original": "123 Main Street, Apartment 4B, , Pittsburgh, PA 15213"
+      }
+    ],
+    "phones": [
+      "(412) 555-1234"
+    ],
+    "emails": [
+      "jonathan.smith@personalmail.com"
+    ],
+    "holdings": {},
+    "relationships": []
+  },
+  {
+    "unified_id": "UNI-0013",
+    "canonical_name": "ROBERT A JOHNSON",
+    "entity_type": "PERSON",
+    "source_records": [
+      {
+        "source": "WEALTH_ADVISORY",
+        "id": "WM-003"
+      }
+    ],
+    "tax_id_last4": "3456",
+    "date_of_birth": "1968-11-03",
+    "addresses": [
+      {
+        "street_line1": "456 OAK AVE STE 100",
+        "street_line2": "",
+        "city": "PHILADELPHIA",
+        "state": "PA",
+        "zip5": "19103",
+        "zip4": "",
+        "full_address": "456 OAK AVE STE 100 PHILADELPHIA PA 19103",
+        "original": "456 Oak Avenue Suite 100, , Philadelphia, PA 19103"
+      }
+    ],
+    "phones": [
+      "(215) 555-4567"
+    ],
+    "emails": [
+      "rjohnson@johnsonproperties.com"
+    ],
+    "holdings": {},
+    "relationships": []
+  },
+  {
+    "unified_id": "UNI-0014",
+    "canonical_name": "SARAH KATHERINE O'BRIEN",
+    "entity_type": "PERSON",
+    "source_records": [
+      {
+        "source": "WEALTH_ADVISORY",
+        "id": "WM-005"
+      }
+    ],
+    "tax_id_last4": "6789",
+    "date_of_birth": "1985-05-28",
+    "addresses": [
+      {
+        "street_line1": "555 HIGHLAND AVE",
+        "street_line2": "",
+        "city": "FOX CHAPEL",
+        "state": "PA",
+        "zip5": "15238",
+        "zip4": "",
+        "full_address": "555 HIGHLAND AVE FOX CHAPEL PA 15238",
+        "original": "555 Highland Avenue, , Fox Chapel, PA 15238"
+      }
+    ],
+    "phones": [
+      "(412) 555-6666"
+    ],
+    "emails": [
+      "sarah@highlandlegal.com"
+    ],
+    "holdings": {},
+    "relationships": []
+  },
+  {
+    "unified_id": "UNI-0015",
+    "canonical_name": "MICHAEL TORRES",
+    "entity_type": "PERSON",
+    "source_records": [
+      {
+        "source": "WEALTH_ADVISORY",
+        "id": "WM-006"
+      }
+    ],
+    "tax_id_last4": "4455",
+    "date_of_birth": "1972-09-14",
+    "addresses": [
+      {
+        "street_line1": "890 BEECHWOOD BLVD",
+        "street_line2": "",
+        "city": "PITTSBURGH",
+        "state": "PA",
+        "zip5": "15206",
+        "zip4": "",
+        "full_address": "890 BEECHWOOD BLVD PITTSBURGH PA 15206",
+        "original": "890 Beechwood Blvd, , Pittsburgh, PA 15206"
+      }
+    ],
+    "phones": [
+      "(412) 555-7777"
+    ],
+    "emails": [
+      "mtorres@highlandlegal.com"
+    ],
+    "holdings": {},
+    "relationships": []
+  }
+]
