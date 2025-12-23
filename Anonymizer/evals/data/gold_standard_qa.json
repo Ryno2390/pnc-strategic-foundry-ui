@@ -1,0 +1,562 @@
+{
+  "version": "1.0",
+  "created": "2025-12-23",
+  "description": "Ground Truth Q&A pairs for PNC Strategic Foundry evaluation",
+  "tiers": {
+    "truth": "Information Extraction & Entity Resolution",
+    "reasoning": "Logic & Tool Use Correctness",
+    "impact": "Business Outcome Queries"
+  },
+  "evaluations": [
+    {
+      "id": "TRUTH-001",
+      "tier": "truth",
+      "category": "entity_resolution",
+      "query": "Are CON-001 (John R Smith) and WM-001 (Jonathan R. Smith) the same person?",
+      "expected_answer": true,
+      "expected_confidence": 0.94,
+      "evidence": ["SSN last4 match: 1234", "DOB match: 1975-03-15", "Same address"],
+      "notes": "Tests name variation handling (John vs Jonathan)"
+    },
+    {
+      "id": "TRUTH-002",
+      "tier": "truth",
+      "category": "entity_resolution",
+      "query": "Are CON-005 (William T Chen) and WM-004 (William Chen) the same person?",
+      "expected_answer": true,
+      "expected_confidence": 0.99,
+      "evidence": ["SSN last4 match: 2345", "DOB match: 1990-12-01"],
+      "notes": "High confidence auto-merge case"
+    },
+    {
+      "id": "TRUTH-003",
+      "tier": "truth",
+      "category": "entity_resolution",
+      "query": "Are CON-002 (Jane M Smith) and WM-002 (Jane Marie Smith) the same person?",
+      "expected_answer": true,
+      "expected_confidence": 0.96,
+      "evidence": ["SSN last4 match: 5678", "DOB match: 1977-08-22"],
+      "notes": "Middle initial vs full middle name"
+    },
+    {
+      "id": "TRUTH-004",
+      "tier": "truth",
+      "category": "entity_resolution",
+      "query": "Are Robert Johnson (CON-003) and Bob Johnson (BIZ-002 contact) the same person?",
+      "expected_answer": true,
+      "expected_confidence": 0.83,
+      "evidence": ["SSN last4 match: 3456", "Nickname match: Robert/Bob"],
+      "notes": "Tests nickname handling"
+    },
+    {
+      "id": "TRUTH-005",
+      "tier": "truth",
+      "category": "entity_resolution",
+      "query": "Should Maria E Garcia-Lopez and Maria Elena Garcia-Lopez be merged?",
+      "expected_answer": true,
+      "expected_confidence": 0.75,
+      "evidence": ["SSN last4 match: 7890", "Same address", "Same phone"],
+      "notes": "Hyphenated name with initial vs full name"
+    },
+    {
+      "id": "TRUTH-006",
+      "tier": "truth",
+      "category": "data_extraction",
+      "query": "What is John Smith's checking account balance?",
+      "expected_answer": 12450.33,
+      "expected_unit": "USD",
+      "source_system": "CONSUMER_CORE",
+      "notes": "Direct account balance extraction"
+    },
+    {
+      "id": "TRUTH-007",
+      "tier": "truth",
+      "category": "data_extraction",
+      "query": "What is the total AUM for Jonathan R. Smith in Wealth Advisory?",
+      "expected_answer": 1945000.00,
+      "expected_unit": "USD",
+      "source_system": "WEALTH_ADVISORY",
+      "notes": "Aggregated portfolio value"
+    },
+    {
+      "id": "TRUTH-008",
+      "tier": "truth",
+      "category": "data_extraction",
+      "query": "What is Smith Consulting LLC's line of credit limit?",
+      "expected_answer": 500000.00,
+      "expected_unit": "USD",
+      "source_system": "COMMERCIAL_CORE",
+      "notes": "Business credit facility extraction"
+    },
+    {
+      "id": "TRUTH-009",
+      "tier": "truth",
+      "category": "data_extraction",
+      "query": "What percentage of Smith Consulting LLC does John R. Smith own?",
+      "expected_answer": 60,
+      "expected_unit": "percent",
+      "source_system": "COMMERCIAL_CORE",
+      "notes": "Ownership percentage extraction"
+    },
+    {
+      "id": "TRUTH-010",
+      "tier": "truth",
+      "category": "data_extraction",
+      "query": "What is the value of the Smith Family Trust?",
+      "expected_answer": 1250000.00,
+      "expected_unit": "USD",
+      "source_system": "WEALTH_ADVISORY",
+      "notes": "Trust value extraction"
+    },
+    {
+      "id": "TRUTH-011",
+      "tier": "truth",
+      "category": "relationship_inference",
+      "query": "What is the relationship between John R Smith and Jane M Smith?",
+      "expected_answer": "SPOUSE",
+      "expected_confidence": 0.85,
+      "evidence": ["Same address", "Same last name", "Listed as joint owner"],
+      "notes": "Spousal relationship inference"
+    },
+    {
+      "id": "TRUTH-012",
+      "tier": "truth",
+      "category": "relationship_inference",
+      "query": "Is John R Smith a business owner?",
+      "expected_answer": true,
+      "expected_business": "Smith Consulting LLC",
+      "expected_role": "Managing Member",
+      "notes": "Business ownership detection"
+    },
+    {
+      "id": "TRUTH-013",
+      "tier": "truth",
+      "category": "relationship_inference",
+      "query": "Who are the authorized signers for Highland Legal Partners PLLC?",
+      "expected_answer": ["Sarah K O'Brien", "Michael Torres", "Lisa Wang"],
+      "notes": "Multi-signer business extraction"
+    },
+    {
+      "id": "TRUTH-014",
+      "tier": "truth",
+      "category": "data_extraction",
+      "query": "What is Robert Johnson's mortgage rate?",
+      "expected_answer": 3.25,
+      "expected_unit": "percent",
+      "source_system": "CONSUMER_CORE",
+      "notes": "Loan rate extraction"
+    },
+    {
+      "id": "TRUTH-015",
+      "tier": "truth",
+      "category": "data_extraction",
+      "query": "What is the balance of Chen Technology Ventures' SBA loan?",
+      "expected_answer": -350000.00,
+      "expected_unit": "USD",
+      "source_system": "COMMERCIAL_CORE",
+      "notes": "Negative balance (debt) extraction"
+    },
+    {
+      "id": "REASON-001",
+      "tier": "reasoning",
+      "category": "tool_selection",
+      "query": "What is the total relationship value for the Smith household?",
+      "expected_tool": "get_household_summary",
+      "expected_params": {"household_name": "Smith"},
+      "incorrect_alternatives": ["get_customer_360 called 3 times", "search_entities"],
+      "notes": "Household queries must use get_household_summary"
+    },
+    {
+      "id": "REASON-002",
+      "tier": "reasoning",
+      "category": "tool_selection",
+      "query": "Tell me about William Chen",
+      "expected_tool": "get_customer_360",
+      "expected_params": {"entity_id_or_name": "William Chen"},
+      "notes": "Individual customer queries use get_customer_360"
+    },
+    {
+      "id": "REASON-003",
+      "tier": "reasoning",
+      "category": "tool_selection",
+      "query": "Find all customers named Johnson",
+      "expected_tool": "search_entities",
+      "expected_params": {"query": "Johnson"},
+      "notes": "Search queries use search_entities"
+    },
+    {
+      "id": "REASON-004",
+      "tier": "reasoning",
+      "category": "tool_selection",
+      "query": "What businesses are connected to the O'Brien family?",
+      "expected_tool": "get_household_summary",
+      "expected_params": {"household_name": "O'Brien"},
+      "notes": "Family business queries use household summary"
+    },
+    {
+      "id": "REASON-005",
+      "tier": "reasoning",
+      "category": "tool_selection",
+      "query": "Get the full profile for entity UNI-0003",
+      "expected_tool": "get_customer_360",
+      "expected_params": {"entity_id_or_name": "UNI-0003"},
+      "notes": "Entity ID queries use get_customer_360"
+    },
+    {
+      "id": "REASON-006",
+      "tier": "reasoning",
+      "category": "logical_entailment",
+      "query": "Is John Smith a high-net-worth client?",
+      "data_provided": {"total_relationship_value": 3320100.66},
+      "expected_conclusion": true,
+      "threshold": 1000000,
+      "invalid_conclusions": ["low net worth", "mass affluent only"],
+      "notes": "$3.32M qualifies as HNW (>$1M threshold)"
+    },
+    {
+      "id": "REASON-007",
+      "tier": "reasoning",
+      "category": "logical_entailment",
+      "query": "Can the Smith household afford a $500K home improvement loan?",
+      "data_provided": {
+        "total_assets": 2915100.66,
+        "existing_debt": 125000,
+        "annual_income_estimate": 250000
+      },
+      "expected_conclusion": true,
+      "reasoning": "DTI would be ~25% which is under 43% max",
+      "notes": "Debt-to-income calculation"
+    },
+    {
+      "id": "REASON-008",
+      "tier": "reasoning",
+      "category": "logical_entailment",
+      "query": "Should we flag William Chen as a concentration risk?",
+      "data_provided": {
+        "chen_tech_stock_value": 2800000,
+        "total_portfolio": 2945000
+      },
+      "expected_conclusion": true,
+      "reasoning": "95% concentration in single stock",
+      "notes": "Investment concentration analysis"
+    },
+    {
+      "id": "REASON-009",
+      "tier": "reasoning",
+      "category": "logical_entailment",
+      "query": "Is Smith Consulting LLC utilizing their credit line efficiently?",
+      "data_provided": {
+        "loc_balance": 125000,
+        "loc_limit": 500000,
+        "utilization": 0.25
+      },
+      "expected_conclusion": "moderate_utilization",
+      "reasoning": "25% utilization is healthy, not over-leveraged",
+      "notes": "Credit utilization analysis"
+    },
+    {
+      "id": "REASON-010",
+      "tier": "reasoning",
+      "category": "logical_entailment",
+      "query": "Is the Johnson Properties commercial mortgage at risk?",
+      "data_provided": {
+        "mortgage_balance": 1250000,
+        "annual_revenue": 3500000,
+        "debt_service_coverage": 2.8
+      },
+      "expected_conclusion": false,
+      "reasoning": "DSCR of 2.8 is well above 1.25 minimum",
+      "notes": "Debt service coverage ratio analysis"
+    },
+    {
+      "id": "REASON-011",
+      "tier": "reasoning",
+      "category": "multi_step",
+      "query": "Calculate the total Smith household exposure including business debt",
+      "expected_steps": [
+        "Call get_household_summary('Smith')",
+        "Extract personal AUM",
+        "Extract business connections",
+        "Sum business debt exposure at ownership percentage",
+        "Calculate net position"
+      ],
+      "expected_answer": {
+        "personal_aum": 2915100.66,
+        "business_exposure": 405000.00,
+        "total": 3320100.66
+      },
+      "notes": "Multi-step calculation requiring tool use + math"
+    },
+    {
+      "id": "REASON-012",
+      "tier": "reasoning",
+      "category": "data_consistency",
+      "query": "Verify John Smith's checking account appears in both Consumer and Commercial records",
+      "expected_answer": {
+        "consumer_balance": 12450.33,
+        "commercial_mailing_match": true
+      },
+      "notes": "Cross-system data consistency check"
+    },
+    {
+      "id": "REASON-013",
+      "tier": "reasoning",
+      "category": "logical_entailment",
+      "query": "Should we recommend 529 plan contributions to the Smith family?",
+      "data_provided": {
+        "children": ["Emma Smith", "Michael Smith"],
+        "emma_529_value": 125000,
+        "michael_529_value": 85000,
+        "business_cash_flow": "positive",
+        "annual_529_limit": 18000
+      },
+      "expected_conclusion": true,
+      "reasoning": "Under-funded 529s + positive business cash flow = opportunity",
+      "notes": "Proactive recommendation logic"
+    },
+    {
+      "id": "REASON-014",
+      "tier": "reasoning",
+      "category": "tool_selection",
+      "query": "Compare the Garcia and Chen households",
+      "expected_tools": ["get_household_summary", "get_household_summary"],
+      "expected_params": [
+        {"household_name": "Garcia"},
+        {"household_name": "Chen"}
+      ],
+      "notes": "Multi-tool comparison query"
+    },
+    {
+      "id": "REASON-015",
+      "tier": "reasoning",
+      "category": "error_handling",
+      "query": "Get customer 360 for 'Nonexistent Person'",
+      "expected_result": "not_found",
+      "expected_behavior": "graceful_error",
+      "notes": "Graceful handling of missing entities"
+    },
+    {
+      "id": "IMPACT-001",
+      "tier": "impact",
+      "category": "time_to_insight",
+      "query": "What is the total relationship value for the Smith household?",
+      "legacy_method": {
+        "steps": ["Login to Consumer", "Search John Smith", "Note balances", "Login to Wealth", "Search Jonathan Smith", "Note AUM", "Login to Commercial", "Search Smith Consulting", "Calculate ownership share", "Sum all values"],
+        "estimated_time_seconds": 900
+      },
+      "foundry_method": {
+        "steps": ["Query: 'Total Smith household value'"],
+        "target_time_seconds": 30
+      },
+      "expected_improvement": 0.97,
+      "notes": "97% reduction in TTI"
+    },
+    {
+      "id": "IMPACT-002",
+      "tier": "impact",
+      "category": "time_to_insight",
+      "query": "Does John Smith have any business connections?",
+      "legacy_method": {
+        "steps": ["Check Consumer notes", "Search Commercial by name", "Search Commercial by SSN", "Cross-reference addresses"],
+        "estimated_time_seconds": 600
+      },
+      "foundry_method": {
+        "steps": ["Query: 'John Smith business connections'"],
+        "target_time_seconds": 5
+      },
+      "expected_improvement": 0.99,
+      "notes": "99% reduction for business link discovery"
+    },
+    {
+      "id": "IMPACT-003",
+      "tier": "impact",
+      "category": "recommendation_quality",
+      "query": "Generate cross-sell recommendation for Smith household",
+      "expected_recommendations": [
+        "529 plan optimization",
+        "Business cash sweep to personal savings",
+        "Consolidated statement across LOBs"
+      ],
+      "quality_criteria": {
+        "data_grounded": true,
+        "actionable": true,
+        "compliant": true
+      },
+      "notes": "Recommendation quality assessment"
+    },
+    {
+      "id": "IMPACT-004",
+      "tier": "impact",
+      "category": "advisor_efficiency",
+      "query": "Prepare for Smith family annual review meeting",
+      "expected_output": {
+        "household_summary": true,
+        "year_over_year_comparison": true,
+        "opportunity_identification": true,
+        "risk_flags": true
+      },
+      "legacy_prep_time_minutes": 45,
+      "foundry_prep_time_minutes": 5,
+      "notes": "Meeting preparation efficiency"
+    },
+    {
+      "id": "IMPACT-005",
+      "tier": "impact",
+      "category": "error_prevention",
+      "query": "Verify no duplicate accounts exist for John Smith",
+      "expected_detection": {
+        "duplicates_found": 0,
+        "near_matches_flagged": 2,
+        "confidence_scores_provided": true
+      },
+      "notes": "Duplicate detection accuracy"
+    },
+    {
+      "id": "TRUTH-016",
+      "tier": "truth",
+      "category": "address_normalization",
+      "query": "Are '123 Main St Apt 4B' and '123 Main Street, Apartment 4B' the same address?",
+      "expected_answer": true,
+      "normalized_form": "123 MAIN ST APT 4B PITTSBURGH PA 15213",
+      "notes": "Address normalization accuracy"
+    },
+    {
+      "id": "TRUTH-017",
+      "tier": "truth",
+      "category": "phone_normalization",
+      "query": "Are '(412) 555-1234' and '412.555.1234' the same phone number?",
+      "expected_answer": true,
+      "normalized_form": "(412) 555-1234",
+      "notes": "Phone normalization accuracy"
+    },
+    {
+      "id": "TRUTH-018",
+      "tier": "truth",
+      "category": "date_normalization",
+      "query": "Are '03/15/1975' and '1975-03-15' the same date?",
+      "expected_answer": true,
+      "normalized_form": "1975-03-15",
+      "notes": "Date format normalization"
+    },
+    {
+      "id": "TRUTH-019",
+      "tier": "truth",
+      "category": "name_normalization",
+      "query": "Are 'Dr. Michael Torres' and 'Michael Torres' the same person?",
+      "expected_answer": true,
+      "confidence_boost": "same_employer_email",
+      "notes": "Title/prefix handling"
+    },
+    {
+      "id": "TRUTH-020",
+      "tier": "truth",
+      "category": "entity_resolution",
+      "query": "Should 'S. O'Brien' and 'Sarah Katherine O'Brien' be linked?",
+      "expected_answer": true,
+      "expected_confidence": 0.84,
+      "evidence": ["SSN match", "Same address", "Initial matches first name"],
+      "notes": "Initial vs full name matching"
+    },
+    {
+      "id": "REASON-016",
+      "tier": "reasoning",
+      "category": "regulatory_compliance",
+      "query": "Does the reasoning trace include all required audit fields?",
+      "required_fields": [
+        "timestamp",
+        "advisor_id",
+        "entities_accessed",
+        "tool_calls",
+        "data_sources"
+      ],
+      "notes": "Audit trail completeness"
+    },
+    {
+      "id": "REASON-017",
+      "tier": "reasoning",
+      "category": "data_freshness",
+      "query": "Is the data current as of the extract date?",
+      "expected_behavior": "check_extract_date",
+      "stale_threshold_days": 1,
+      "notes": "Data currency validation"
+    },
+    {
+      "id": "REASON-018",
+      "tier": "reasoning",
+      "category": "permission_enforcement",
+      "query": "Does a Retail Banker see Wealth Advisory data?",
+      "expected_answer": false,
+      "expected_behavior": "data_redacted",
+      "notes": "RBAC enforcement validation"
+    },
+    {
+      "id": "REASON-019",
+      "tier": "reasoning",
+      "category": "confidence_thresholds",
+      "query": "Is a 0.72 confidence match auto-merged?",
+      "expected_answer": false,
+      "expected_action": "HUMAN_REVIEW",
+      "threshold_applied": "MEDIUM (0.70-0.94)",
+      "notes": "Confidence threshold enforcement"
+    },
+    {
+      "id": "REASON-020",
+      "tier": "reasoning",
+      "category": "confidence_thresholds",
+      "query": "Is a 0.96 confidence match auto-merged?",
+      "expected_answer": true,
+      "expected_action": "AUTO_MERGE",
+      "threshold_applied": "HIGH (≥0.95)",
+      "notes": "Auto-merge threshold validation"
+    },
+    {
+      "id": "IMPACT-006",
+      "tier": "impact",
+      "category": "cross_sell_identification",
+      "query": "Identify cross-sell opportunities for William Chen",
+      "expected_opportunities": [
+        "Portfolio diversification (reduce concentration)",
+        "Business succession planning",
+        "Personal liability insurance"
+      ],
+      "notes": "Cross-sell opportunity detection"
+    },
+    {
+      "id": "IMPACT-007",
+      "tier": "impact",
+      "category": "risk_identification",
+      "query": "Identify risk factors for Garcia Restaurant Group",
+      "expected_risks": [
+        "Single-owner business (key person risk)",
+        "Restaurant industry volatility"
+      ],
+      "notes": "Business risk assessment"
+    },
+    {
+      "id": "IMPACT-008",
+      "tier": "impact",
+      "category": "compliance_check",
+      "query": "Verify all Highland Legal Partners signers are properly documented",
+      "expected_signers": 3,
+      "documentation_complete": true,
+      "notes": "Commercial account compliance"
+    }
+  ],
+  "scoring": {
+    "truth_tier": {
+      "weight": 0.40,
+      "pass_threshold": 0.98,
+      "critical_failures": ["entity_resolution errors on auto-merge", "data_extraction errors >2%"]
+    },
+    "reasoning_tier": {
+      "weight": 0.35,
+      "pass_threshold": 0.95,
+      "critical_failures": ["wrong tool selection", "logical contradiction with data"]
+    },
+    "impact_tier": {
+      "weight": 0.25,
+      "pass_threshold": 0.80,
+      "critical_failures": ["TTI regression", "recommendation rejection >50%"]
+    }
+  }
+}

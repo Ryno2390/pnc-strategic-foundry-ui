@@ -82,6 +82,11 @@ Anonymizer/s1_traces.jsonl
 Anonymizer/pnc_reasoning_traces_t1.jsonl
 
 # ===================
+# Eval results (can be regenerated)
+# ===================
+Anonymizer/evals/results/
+
+# ===================
 # Swift / Xcode
 # ===================
 .build/
