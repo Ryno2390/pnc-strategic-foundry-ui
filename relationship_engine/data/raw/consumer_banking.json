@@ -1,0 +1,139 @@
+{
+  "source_system": "CONSUMER_CORE",
+  "extract_date": "2025-12-22",
+  "records": [
+    {
+      "customer_id": "CON-001",
+      "first_name": "John",
+      "last_name": "Smith",
+      "middle_initial": "R",
+      "ssn_last4": "1234",
+      "date_of_birth": "03/15/1975",
+      "address_line1": "123 Main St",
+      "address_line2": "Apt 4B",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "zip": "15213",
+      "phone_primary": "(412) 555-1234",
+      "phone_mobile": "412.555.9876",
+      "email": "jsmith@gmail.com",
+      "accounts": [
+        {"type": "CHECKING", "number": "****4567", "balance": 12450.33, "opened": "2018-05-12"},
+        {"type": "SAVINGS", "number": "****4568", "balance": 45200.00, "opened": "2018-05-12"},
+        {"type": "CREDIT_CARD", "number": "****9012", "balance": -2340.50, "limit": 15000}
+      ],
+      "joint_owner": "Jane M Smith",
+      "relationship_start": "2018-05-12"
+    },
+    {
+      "customer_id": "CON-002",
+      "first_name": "Jane",
+      "last_name": "Smith",
+      "middle_initial": "M",
+      "ssn_last4": "5678",
+      "date_of_birth": "1977-08-22",
+      "address_line1": "123 Main Street, Apt. 4B",
+      "address_line2": "",
+      "city": "Pittsburgh",
+      "state": "Pennsylvania",
+      "zip": "15213-4521",
+      "phone_primary": "4125559876",
+      "phone_mobile": null,
+      "email": "jane.smith@outlook.com",
+      "accounts": [
+        {"type": "CHECKING", "number": "****4567", "balance": 12450.33, "opened": "2018-05-12"},
+        {"type": "IRA", "number": "****7890", "balance": 125000.00, "opened": "2020-01-15"}
+      ],
+      "joint_owner": "John R Smith",
+      "relationship_start": "2018-05-12"
+    },
+    {
+      "customer_id": "CON-003",
+      "first_name": "Robert",
+      "last_name": "Johnson",
+      "middle_initial": "",
+      "ssn_last4": "3456",
+      "date_of_birth": "11-03-1968",
+      "address_line1": "456 Oak Avenue",
+      "address_line2": "Suite 100",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19103",
+      "phone_primary": "215-555-4567",
+      "phone_mobile": "(215) 555-7890",
+      "email": "RJOHNSON@YAHOO.COM",
+      "accounts": [
+        {"type": "CHECKING", "number": "****1111", "balance": 8750.25, "opened": "2015-03-20"},
+        {"type": "MORTGAGE", "number": "****2222", "balance": -245000.00, "rate": 3.25, "term": 360}
+      ],
+      "joint_owner": null,
+      "relationship_start": "2015-03-20"
+    },
+    {
+      "customer_id": "CON-004",
+      "first_name": "Maria",
+      "last_name": "Garcia-Lopez",
+      "middle_initial": "E",
+      "ssn_last4": "7890",
+      "date_of_birth": "1982/06/15",
+      "address_line1": "789 Elm Street",
+      "address_line2": "",
+      "city": "pittsburgh",
+      "state": "pa",
+      "zip": "15206",
+      "phone_primary": "+1 (412) 555-3333",
+      "phone_mobile": "14125554444",
+      "email": "maria.garcia@company.com",
+      "accounts": [
+        {"type": "CHECKING", "number": "****3333", "balance": 5200.00, "opened": "2021-09-01"},
+        {"type": "AUTO_LOAN", "number": "****4444", "balance": -18500.00, "rate": 4.9}
+      ],
+      "joint_owner": null,
+      "relationship_start": "2021-09-01"
+    },
+    {
+      "customer_id": "CON-005",
+      "first_name": "William",
+      "last_name": "Chen",
+      "middle_initial": "T",
+      "ssn_last4": "2345",
+      "date_of_birth": "1990-12-01",
+      "address_line1": "321 River Road",
+      "address_line2": "Unit 12",
+      "city": "Sewickley",
+      "state": "PA",
+      "zip": "15143",
+      "phone_primary": "724-555-8888",
+      "phone_mobile": "724-555-9999",
+      "email": "will.chen@techstartup.io",
+      "accounts": [
+        {"type": "CHECKING", "number": "****5555", "balance": 34500.00, "opened": "2019-07-15"},
+        {"type": "SAVINGS", "number": "****5556", "balance": 89000.00, "opened": "2019-07-15"}
+      ],
+      "joint_owner": null,
+      "relationship_start": "2019-07-15"
+    },
+    {
+      "customer_id": "CON-006",
+      "first_name": "Sarah",
+      "last_name": "O'Brien",
+      "middle_initial": "K",
+      "ssn_last4": "6789",
+      "date_of_birth": "05/28/1985",
+      "address_line1": "555 Highland Ave",
+      "address_line2": "",
+      "city": "Fox Chapel",
+      "state": "PA",
+      "zip": "15238",
+      "phone_primary": "(412) 555-6666",
+      "phone_mobile": "",
+      "email": "sarah.obrien@lawfirm.com",
+      "accounts": [
+        {"type": "CHECKING", "number": "****6666", "balance": 28900.00, "opened": "2017-02-28"},
+        {"type": "HELOC", "number": "****6667", "balance": -45000.00, "limit": 150000}
+      ],
+      "joint_owner": null,
+      "relationship_start": "2017-02-28"
+    }
+  ]
+}
