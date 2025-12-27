@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@google/genai": "^0.7.0",
+    "d3-force": "^3.0.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-force-graph-2d": "^1.29.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

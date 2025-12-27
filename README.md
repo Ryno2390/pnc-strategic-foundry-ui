@@ -29,62 +29,95 @@ A customer-centered AI platform that transforms siloed banking data into unified
 
 ## 🚀 Key Components
 
+
+
 ### 1. PNC Strategic Advisor (macOS App)
+
 A native SwiftUI application designed for banking advisors.
+
 - **100% Local Inference:** Runs on Apple Silicon using MLX.
+
 - **Privacy First:** Data never leaves the device.
-- **Location:** `PNCAdvisor/`
-- **Setup:** Open `PNCAdvisor/Package.swift` in Xcode 15+.
 
-### 2. Defense-in-Depth PII Anonymizer
-A multi-layered orchestrator for ensuring data privacy in LLM traces.
-- **Layer 1 (Regex):** Deterministic scrubbing of SSNs, accounts, and emails.
-- **Layer 2 (NER):** Structural detection using Microsoft Presidio (SpaCy).
-- **Layer 3 (Cognitive):** Context-aware scrubbing using a fine-tuned 3B model to catch "unique fingerprint" identifiers.
-- **Location:** `orchestrator.py`
+- **Quantization Pipeline:** `quantize_model.py` automates model optimization for edge delivery.
 
-### 3. The AI Flywheel
-A self-improving training loop that leverages "Teacher" models to upgrade "Student" models.
-- **Loop:** Train → Generate → Grade (Claude 3.5) → Merge → Repeat.
-- **Features:** Teacher injection for cold-starts and "Near-Miss" analysis for error correction.
-- **Location:** `flywheel.py`
+
+
+### 2. Knowledge Pillar: Policy RAG
+
+Enables the AI to reason over internal bank regulations.
+
+- **Contextual Intelligence:** Indexes markdown/PDF policies (SBA, Mortgage) for semantic retrieval.
+
+- **Searchable Rules:** `policy_engine.py` allows advisors to query bank policy using natural language.
+
+
+
+### 3. Visual Relationship Explorer
+
+An interactive graph visualization of the Unified Entity Graph.
+
+- **Network Insights:** Built with `react-force-graph`, allowing advisors to visually traverse connections between personal and commercial relationships.
+
+- **Location:** `src/frontend/components/RelationshipGraph.tsx`
+
+
+
+### 4. Deterministic Financial Guardrails
+
+Hard-coded logic layer to verify AI-generated financial advice.
+
+- **Compliance Enforcement:** Calculates DTI and DSCR metrics to validate product recommendations.
+
+- **Safety First:** Adheres to the "Responsible Since 1865" philosophy by cross-checking reasoning traces.
+
+
 
 ---
+
+
 
 ## 🛠️ Getting Started
 
+
+
 ### Backend & CLI Tools
+
 **Prerequisites:** Python 3.11+, Apple Silicon (highly recommended)
 
+
+
 1.  **Initialize Environment:**
+
     ```bash
+
     python -m venv .venv
+
     source .venv/bin/activate
-    pip install -r requirements.txt # or install manually: mlx-lm anthropic presidio-analyzer spacy
-    python -m spacy download en_core_web_lg
+
+    pip install -r requirements.txt
+
     ```
 
-2.  **Run the Relationship Engine Demo:**
+
+
+2.  **Start the API Server:**
+
     ```bash
-    python relationship_engine/s1_advisor_demo.py
+
+    python src/backend/app.py
+
     ```
 
-3.  **Start the Flywheel Status Center:**
-    ```bash
-    python flywheel.py status
-    ```
 
-### Web Frontend
-**Prerequisites:** Node.js
 
-1.  **Install & Run:**
-    ```bash
-    npm install
-    npm run dev
-    ```
-2.  **Environment:** Set `GEMINI_API_KEY` in `.env.local` for the web-based reasoning demo.
+3.  **Access Documentation:** Open `http://localhost:8000/docs` for the Interactive Swagger UI.
+
+
 
 ---
+
+
 
 ## 📂 Project Structure
 
@@ -94,27 +127,31 @@ A self-improving training loop that leverages "Teacher" models to upgrade "Stude
 
 ├── src/
 
-│   ├── backend/               # Core Python logic (Flywheel, Anonymizer)
+│   ├── backend/               # Core Python logic
 
-│   │   ├── relationship_engine/ # Identity resolution & Tool-use
+│   │   ├── relationship_engine/ # Identity resolution, Tool-use, & Guardrails
 
-│   │   ├── fine_tuning/       # Training scripts
+│   │   ├── policy_engine.py   # Policy RAG Indexer & Search
 
-│   │   └── s1_adapter/        # Trained model weights
+│   │   ├── quantize_model.py  # Model optimization script
+
+│   │   └── app.py             # FastAPI Server Entry point
 
 │   └── frontend/              # React/Vite source code
+
+│       └── components/        # RelationshipGraph.tsx, ArtifactCard.tsx
 
 ├── data/                      # Unified data storage
 
 │   ├── training/              # Training datasets & prompts
 
-│   └── relationship_store/    # Raw & resolved identity data
+│   ├── relationship_store/    # Raw & resolved identity data
+
+│   └── policies/              # Bank policy documents (Markdown/PDF)
 
 ├── assets/                    # Project assets (images, screenshots)
 
 ├── docs/                      # Documentation & instructions
-
-├── PNCAdvisor/                # Native macOS SwiftUI Application
 
 └── outputs/                   # Fine-tuning outputs & quantized models
 

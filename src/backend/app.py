@@ -9,6 +9,8 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).parent))
 
 from relationship_engine.context_assembler import ContextAssembler, execute_tool
+from relationship_engine.guardrails import FinancialGuardrails
+from policy_engine import PolicyEngine
 from api_utils import APIResponse, APIError, ErrorCodes
 
 app = FastAPI(
@@ -26,12 +28,24 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Initialize the Context Assembler
+# Initialize the Engines
 assembler = ContextAssembler()
+project_root = Path(__file__).parent.parent.parent
+policy_engine = PolicyEngine(persist_dir=str(project_root / "data" / "policy_index"))
+guardrails = FinancialGuardrails()
 
 @app.get("/")
 async def root():
     return APIResponse.success(message="PNC Strategic Foundry API is operational")
+
+@app.get("/api/v1/policy/search")
+async def search_policy(q: str = Query(..., min_length=2)):
+    """Semantic (Keyword-boosted) search for relevant bank policies."""
+    try:
+        results = policy_engine.search(q)
+        return APIResponse.success(results)
+    except Exception as e:
+        return APIResponse.error(str(e))
 
 @app.get("/api/v1/customer/{name_or_id}")
 async def get_customer(name_or_id: str):
@@ -72,6 +86,47 @@ async def search(q: str = Query(..., min_length=2)):
     try:
         results = assembler.search_entities(q)
         return APIResponse.success(results)
+    except Exception as e:
+        return APIResponse.error(str(e))
+
+@app.get("/api/v1/graph/data")
+async def get_graph_data():
+    """Retrieve the unified entity graph as nodes and edges for visualization."""
+    try:
+        # Load unified entities
+        path = project_root / "data" / "relationship_store" / "resolved" / "unified_entities.json"
+        with open(path, "r") as f:
+            entities = json.load(f)
+        
+        # Load relationships
+        rel_path = project_root / "data" / "relationship_store" / "resolved" / "relationships.json"
+        with open(rel_path, "r") as f:
+            relationships = json.load(f)
+
+        nodes = []
+        for e in entities:
+            nodes.append({
+                "id": e["unified_id"],
+                "name": e["canonical_name"],
+                "group": e["entity_type"],
+                "val": 10 if e["entity_type"] == "BUSINESS" else 5
+            })
+        
+        links = []
+        for r in relationships:
+            # Note: We need to map source_ids to unified_ids or just use names if unique
+            # For this prototype, we'll try to find the unified_id by name
+            links.append({
+                "source": r["entity1_name"], # Simplified for demo
+                "target": r["entity2_name"],
+                "type": r["relationship_type"]
+            })
+            
+        # Refine nodes to use names as IDs if links use names
+        # In a real app, you'd use unified_ids everywhere
+        demo_nodes = [{"id": n["name"], "group": n["group"]} for n in nodes]
+
+        return APIResponse.success({"nodes": demo_nodes, "links": links})
     except Exception as e:
         return APIResponse.error(str(e))
 
