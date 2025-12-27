@@ -54,11 +54,11 @@ logs/
 # ===================
 # Model Artifacts (too large for git)
 # ===================
-Anonymizer/s1_adapter/
-Anonymizer/adapters/
 models/
 checkpoints/
 outputs/
+src/backend/s1_adapter/
+src/backend/adapters/
 *.safetensors
 *.bin
 *.gguf
@@ -76,15 +76,15 @@ credentials.json
 # ===================
 # Generated traces (can be regenerated)
 # ===================
-Anonymizer/.flywheel_state.json
-Anonymizer/graded_traces.jsonl
-Anonymizer/s1_traces.jsonl
-Anonymizer/pnc_reasoning_traces_t1.jsonl
+.flywheel_state.json
+graded_traces.jsonl
+s1_traces.jsonl
+pnc_reasoning_traces_t1.jsonl
 
 # ===================
 # Eval results (can be regenerated)
 # ===================
-Anonymizer/evals/results/
+evals/results/
 
 # ===================
 # Swift / Xcode

@@ -1,0 +1,27 @@
+# PNC Strategic Foundry - Dependencies
+
+# MLX (Apple Silicon Optimized Inference)
+mlx-lm
+
+# AI APIs
+anthropic
+google-generativeai
+
+# PII Anonymization (Layer 2)
+presidio-analyzer
+presidio-anonymizer
+spacy
+
+# Fine-Tuning (Layer 3 & S1 Model)
+torch
+transformers
+datasets
+peft
+trl
+bitsandbytes; sys_platform != 'darwin' # Optional for non-Mac environments
+
+# Utilities
+pandas
+scikit-learn
+tqdm
+python-dotenv
