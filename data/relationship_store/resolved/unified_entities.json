@@ -5,12 +5,12 @@
     "entity_type": "PERSON",
     "source_records": [
       {
-        "source": "CONSUMER_CORE",
-        "id": "CON-005"
-      },
-      {
         "source": "WEALTH_ADVISORY",
         "id": "WM-004"
+      },
+      {
+        "source": "CONSUMER_CORE",
+        "id": "CON-005"
       }
     ],
     "tax_id_last4": "2345",
@@ -24,7 +24,7 @@
         "zip5": "15143",
         "zip4": "",
         "full_address": "321 RIVER RD UNIT 12 SEWICKLEY PA 15143",
-        "original": "321 River Road, Unit 12, Sewickley, PA 15143"
+        "original": "321 River Rd, Unit 12, , Sewickley, PA 15143"
       },
       {
         "street_line1": "321 RIVER RD",
@@ -34,7 +34,7 @@
         "zip5": "15143",
         "zip4": "",
         "full_address": "321 RIVER RD UNIT 12 SEWICKLEY PA 15143",
-        "original": "321 River Rd, Unit 12, , Sewickley, PA 15143"
+        "original": "321 River Road, Unit 12, Sewickley, PA 15143"
       }
     ],
     "phones": [
@@ -52,27 +52,17 @@
     "entity_type": "PERSON",
     "source_records": [
       {
-        "source": "WEALTH_ADVISORY",
-        "id": "WM-002"
-      },
-      {
         "source": "CONSUMER_CORE",
         "id": "CON-002"
+      },
+      {
+        "source": "WEALTH_ADVISORY",
+        "id": "WM-002"
       }
     ],
     "tax_id_last4": "5678",
     "date_of_birth": "1977-08-22",
     "addresses": [
-      {
-        "street_line1": "123 MAIN ST APT 4B",
-        "street_line2": "",
-        "city": "PITTSBURGH",
-        "state": "PA",
-        "zip5": "15213",
-        "zip4": "4521",
-        "full_address": "123 MAIN ST APT 4B PITTSBURGH PA 15213",
-        "original": "123 Main St #4B, , Pittsburgh, Pennsylvania 15213-4521"
-      },
       {
         "street_line1": "123 MAIN ST",
         "street_line2": "APT 4B",
@@ -82,6 +72,16 @@
         "zip4": "4521",
         "full_address": "123 MAIN ST APT 4B PITTSBURGH PA 15213",
         "original": "123 Main Street, Apt. 4B, , Pittsburgh, Pennsylvania 15213-4521"
+      },
+      {
+        "street_line1": "123 MAIN ST APT 4B",
+        "street_line2": "",
+        "city": "PITTSBURGH",
+        "state": "PA",
+        "zip5": "15213",
+        "zip4": "4521",
+        "full_address": "123 MAIN ST APT 4B PITTSBURGH PA 15213",
+        "original": "123 Main St #4B, , Pittsburgh, Pennsylvania 15213-4521"
       }
     ],
     "phones": [

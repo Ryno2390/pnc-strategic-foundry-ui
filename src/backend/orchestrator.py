@@ -490,8 +490,6 @@ Preserve all financial intent and structure. Only replace identifying context wi
                 self.tokenizer,
                 prompt=prompt,
                 max_tokens=self.config.max_tokens,
-                temp=self.config.temperature,
-                top_p=self.config.top_p,
                 verbose=self.config.verbose,
             )
 

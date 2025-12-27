@@ -7,6 +7,10 @@ mlx-lm
 anthropic
 google-generativeai
 
+# Backend API
+fastapi
+uvicorn
+
 # PII Anonymization (Layer 2)
 presidio-analyzer
 presidio-anonymizer

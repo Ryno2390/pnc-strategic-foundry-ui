@@ -1,0 +1,8 @@
+{"text": "My name is John Smith and my account is 12345.", "pii": [{"text": "John Smith", "type": "CUSTOMER_IDENTIFIER"}, {"text": "12345", "type": "FINANCIAL_ID"}]}
+{"text": "The vertical farming company in Pittsburgh's Strip District is owned by Jonathan Whitfield.", "pii": [{"text": "vertical farming company in Pittsburgh's Strip District", "type": "SENSITIVE_CONTEXT"}, {"text": "Jonathan Whitfield", "type": "CUSTOMER_IDENTIFIER"}]}
+{"text": "I live at 555 Highland Ave and my SSN is 000-00-0000.", "pii": [{"text": "555 Highland Ave", "type": "LOCATION_SENSITIVE"}, {"text": "000-00-0000", "type": "SSN"}]}
+{"text": "The estate of Dr. Helena Marchetti is worth $2.3M.", "pii": [{"text": "Dr. Helena Marchetti", "type": "CUSTOMER_IDENTIFIER"}, {"text": "$2.3M", "type": "CURRENCY_VALUE"}]}
+{"text": "Please call me at 412-555-1212.", "pii": [{"text": "412-555-1212", "type": "PHONE_NUMBER"}]}
+{"text": "My email is test@pnc.com.", "pii": [{"text": "test@pnc.com", "type": "EMAIL"}]}
+{"text": "I'm the head of neurosurgery at UPMC Presbyterian.", "pii": [{"text": "head of neurosurgery at UPMC Presbyterian", "type": "SENSITIVE_CONTEXT"}]}
+{"text": "I won the $12M Powerball jackpot in Cranberry Township last February.", "pii": [{"text": "$12M", "type": "CURRENCY_VALUE"}, {"text": "Powerball jackpot", "type": "SENSITIVE_CONTEXT"}, {"text": "Cranberry Township", "type": "LOCATION_SENSITIVE"}]}

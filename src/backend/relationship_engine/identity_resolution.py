@@ -419,39 +419,65 @@ class IdentityResolutionEngine:
         return score
 
     def find_all_matches(self) -> list[MatchScore]:
-        """Find all potential matches between PERSON entities across systems."""
+        """
+        Find potential matches using a scalable Blocking Strategy.
+        
+        Instead of O(n^2) comparisons, we index entities by 'Blocking Keys'
+        and only compare records within the same block.
+        """
         persons = [e for e in self.entities if e["entity_type"] == "PERSON"]
+        logger.info(f"Indexing {len(persons)} person entities for scalable matching...")
 
-        logger.info(f"Comparing {len(persons)} person entities...")
+        # 1. Build Blocks (Inverted Index)
+        # We use Zip Code and Last Name Prefix as primary blocking keys
+        blocks = defaultdict(list)
+        for p in persons:
+            addr = p.get("address", {})
+            zip_code = addr.get("zip5", "UNKNOWN")
+            last_name = p["name"].get("last_name", "UNKNOWN").upper()
+            last_prefix = last_name[:3] if len(last_name) >= 3 else last_name
 
+            # Key format: ZIP|PREFIX (e.g., 15213|SMI)
+            block_key = f"{zip_code}|{last_prefix}"
+            blocks[block_key].append(p)
+
+        # 2. Compare within blocks
         matches = []
-        compared = set()
+        compared_pairs = set()
+        comparison_count = 0
 
-        for i, e1 in enumerate(persons):
-            for j, e2 in enumerate(persons):
-                if i >= j:
-                    continue  # Skip self and duplicates
+        logger.info(f"Processing {len(blocks)} candidate blocks...")
 
-                # Skip same-system comparisons
-                if e1["source_system"] == e2["source_system"]:
-                    continue
+        for block_key, members in blocks.items():
+            if len(members) < 2:
+                continue
 
-                # Create unique pair key
-                pair_key = tuple(sorted([e1["source_id"], e2["source_id"]]))
-                if pair_key in compared:
-                    continue
-                compared.add(pair_key)
+            for i, e1 in enumerate(members):
+                for j, e2 in enumerate(members):
+                    if i >= j:
+                        continue
+                    
+                    # Skip same-system comparisons
+                    if e1["source_system"] == e2["source_system"]:
+                        continue
 
-                score = self.calculate_match_score(e1, e2)
-
-                # Only keep scores above a minimum threshold
-                if score.total_score >= 0.3:
-                    matches.append(score)
+                    # Unique pair key (bidirectional)
+                    pair_key = tuple(sorted([e1["source_id"], e2["source_id"]]))
+                    if pair_key in compared_pairs:
+                        continue
+                    
+                    compared_pairs.add(pair_key)
+                    comparison_count += 1
+                    
+                    score = self.calculate_match_score(e1, e2)
+                    if score.total_score >= 0.3:
+                        matches.append(score)
 
         # Sort by score descending
         matches.sort(key=lambda x: x.total_score, reverse=True)
         self.match_scores = matches
 
+        logger.info(f"Scalable matching complete. Comparisons: {comparison_count} (vs {len(persons)**2} brute force)")
         logger.info(f"Found {len(matches)} potential matches")
         return matches
 
