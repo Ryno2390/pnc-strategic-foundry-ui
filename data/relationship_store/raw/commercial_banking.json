@@ -1,175 +1,348 @@
 {
   "source_system": "COMMERCIAL_CORE",
-  "extract_date": "2025-12-22",
+  "extraction_date": "2025-12-29T11:14:59.416361",
   "records": [
     {
-      "business_id": "BIZ-001",
-      "legal_name": "Smith Consulting LLC",
-      "dba_name": "Smith & Associates",
-      "ein": "25-1234567",
-      "entity_type": "LLC",
-      "formation_state": "PA",
-      "formation_date": "2019-03-15",
-      "business_address": "500 Grant Street, Floor 22",
-      "business_city": "Pittsburgh",
+      "business_id": "BIZ-91435",
+      "legal_name": "Johnson Ventures LLC",
+      "ein": "99-5208335",
+      "business_address": "5536 Main St",
+      "business_city": "Squirrel Hill",
       "business_state": "PA",
-      "business_zip": "15219",
-      "mailing_address": "123 Main St Apt 4B",
-      "mailing_city": "Pittsburgh",
-      "mailing_state": "PA",
-      "mailing_zip": "15213",
-      "primary_contact": "J. Smith",
-      "contact_title": "Managing Member",
-      "contact_phone": "412-555-1234",
-      "contact_email": "john@smithconsulting.com",
-      "contact_ssn_last4": "1234",
+      "business_zip": "19541",
+      "primary_contact": "Michael Johnson",
+      "contact_phone": "(389) 555-4377",
+      "contact_email": "michael@johnsonbiz.com",
+      "contact_ssn_last4": "2167",
       "authorized_signers": [
-        {"name": "John R. Smith", "title": "Managing Member", "ownership_pct": 60},
-        {"name": "Jane Smith", "title": "Member", "ownership_pct": 40}
-      ],
-      "accounts": [
-        {"type": "BUSINESS_CHECKING", "number": "****8001", "balance": 87500.00, "opened": "2019-04-01"},
-        {"type": "BUSINESS_SAVINGS", "number": "****8002", "balance": 250000.00, "opened": "2019-04-01"},
-        {"type": "LINE_OF_CREDIT", "number": "****8003", "balance": -125000.00, "limit": 500000}
-      ],
-      "annual_revenue": 1250000,
-      "naics_code": "541611",
-      "relationship_start": "2019-04-01"
+        {
+          "name": "Michael Johnson",
+          "role": "OWNER"
+        }
+      ]
     },
     {
-      "business_id": "BIZ-002",
-      "legal_name": "Johnson Properties Inc",
-      "dba_name": "",
-      "ein": "23-9876543",
-      "entity_type": "S-Corp",
-      "formation_state": "PA",
-      "formation_date": "2010-06-01",
-      "business_address": "456 Oak Ave, Ste 100",
+      "business_id": "BIZ-82964",
+      "legal_name": "Garcia Ventures LLC",
+      "ein": "99-1229681",
+      "business_address": "2583 Oak Ave",
+      "business_city": "Squirrel Hill",
+      "business_state": "PA",
+      "business_zip": "19780",
+      "primary_contact": "John Garcia",
+      "contact_phone": "(616) 555-2906",
+      "contact_email": "john@garciabiz.com",
+      "contact_ssn_last4": "8012",
+      "authorized_signers": [
+        {
+          "name": "John Garcia",
+          "role": "OWNER"
+        }
+      ]
+    },
+    {
+      "business_id": "BIZ-75315",
+      "legal_name": "Davis Consulting LLC",
+      "ein": "99-8120075",
+      "business_address": "9734 Main St",
       "business_city": "Philadelphia",
-      "business_state": "Pennsylvania",
-      "business_zip": "19103-2345",
-      "mailing_address": "Same",
-      "mailing_city": "",
-      "mailing_state": "",
-      "mailing_zip": "",
-      "primary_contact": "Bob Johnson",
-      "contact_title": "President",
-      "contact_phone": "(215) 555-4567",
-      "contact_email": "bob@johnsonproperties.com",
-      "contact_ssn_last4": "3456",
+      "business_state": "PA",
+      "business_zip": "18787",
+      "primary_contact": "Elizabeth Davis",
+      "contact_phone": "(410) 555-1212",
+      "contact_email": "elizabeth@davisbiz.com",
+      "contact_ssn_last4": "9621",
       "authorized_signers": [
-        {"name": "Robert Johnson", "title": "President/CEO", "ownership_pct": 100}
-      ],
-      "accounts": [
-        {"type": "BUSINESS_CHECKING", "number": "****8010", "balance": 156000.00, "opened": "2010-07-15"},
-        {"type": "COMMERCIAL_MORTGAGE", "number": "****8011", "balance": -1250000.00, "rate": 4.5},
-        {"type": "EQUIPMENT_LOAN", "number": "****8012", "balance": -45000.00, "rate": 5.25}
-      ],
-      "annual_revenue": 3500000,
-      "naics_code": "531110",
-      "relationship_start": "2010-07-15"
+        {
+          "name": "Elizabeth Davis",
+          "role": "OWNER"
+        }
+      ]
     },
     {
-      "business_id": "BIZ-003",
-      "legal_name": "Chen Technology Ventures LLC",
-      "dba_name": "ChenTech",
-      "ein": "27-5551234",
-      "entity_type": "LLC",
-      "formation_state": "DE",
-      "formation_date": "2020-01-15",
-      "business_address": "321 River Rd., Unit 12",
-      "business_city": "Sewickley",
+      "business_id": "BIZ-60063",
+      "legal_name": "Johnson Consulting LLC",
+      "ein": "99-3280928",
+      "business_address": "2330 Main St",
+      "business_city": "Philadelphia",
       "business_state": "PA",
-      "business_zip": "15143",
-      "mailing_address": "321 River Road Unit 12",
-      "mailing_city": "Sewickley",
-      "mailing_state": "PA",
-      "mailing_zip": "15143",
-      "primary_contact": "Will Chen",
-      "contact_title": "Founder/CEO",
-      "contact_phone": "7245558888",
-      "contact_email": "will@chentech.io",
-      "contact_ssn_last4": "2345",
+      "business_zip": "19221",
+      "primary_contact": "David Johnson",
+      "contact_phone": "(914) 555-2879",
+      "contact_email": "david@johnsonbiz.com",
+      "contact_ssn_last4": "4965",
       "authorized_signers": [
-        {"name": "William T Chen", "title": "CEO", "ownership_pct": 80},
-        {"name": "David Park", "title": "CTO", "ownership_pct": 20}
-      ],
-      "accounts": [
-        {"type": "BUSINESS_CHECKING", "number": "****8020", "balance": 425000.00, "opened": "2020-02-01"},
-        {"type": "BUSINESS_SAVINGS", "number": "****8021", "balance": 1200000.00, "opened": "2020-02-01"},
-        {"type": "SBA_LOAN", "number": "****8022", "balance": -350000.00, "rate": 6.0}
-      ],
-      "annual_revenue": 2800000,
-      "naics_code": "541512",
-      "relationship_start": "2020-02-01"
+        {
+          "name": "David Johnson",
+          "role": "OWNER"
+        }
+      ]
     },
     {
-      "business_id": "BIZ-004",
-      "legal_name": "Highland Legal Partners PLLC",
-      "dba_name": "O'Brien Law",
-      "ein": "26-7778899",
-      "entity_type": "PLLC",
-      "formation_state": "PA",
-      "formation_date": "2015-09-01",
-      "business_address": "One PPG Place, Suite 3500",
-      "business_city": "Pittsburgh",
+      "business_id": "BIZ-91944",
+      "legal_name": "O'Brien Ventures LLC",
+      "ein": "99-3198667",
+      "business_address": "1769 Main St",
+      "business_city": "Squirrel Hill",
       "business_state": "PA",
-      "business_zip": "15222",
-      "mailing_address": "555 Highland Avenue",
-      "mailing_city": "Fox Chapel",
-      "mailing_state": "PA",
-      "mailing_zip": "15238",
-      "primary_contact": "S. O'Brien",
-      "contact_title": "Managing Partner",
-      "contact_phone": "412.555.6666",
-      "contact_email": "sobrien@highlandlegal.com",
-      "contact_ssn_last4": "6789",
+      "business_zip": "19441",
+      "primary_contact": "Maria O'Brien",
+      "contact_phone": "(745) 555-8313",
+      "contact_email": "maria@o'brienbiz.com",
+      "contact_ssn_last4": "6330",
       "authorized_signers": [
-        {"name": "Sarah K O'Brien", "title": "Managing Partner", "ownership_pct": 45},
-        {"name": "Michael Torres", "title": "Partner", "ownership_pct": 35},
-        {"name": "Lisa Wang", "title": "Partner", "ownership_pct": 20}
-      ],
-      "accounts": [
-        {"type": "IOLTA", "number": "****8030", "balance": 890000.00, "opened": "2015-10-01"},
-        {"type": "OPERATING", "number": "****8031", "balance": 125000.00, "opened": "2015-10-01"},
-        {"type": "LINE_OF_CREDIT", "number": "****8032", "balance": 0.00, "limit": 250000}
-      ],
-      "annual_revenue": 4200000,
-      "naics_code": "541110",
-      "relationship_start": "2015-10-01"
+        {
+          "name": "Maria O'Brien",
+          "role": "OWNER"
+        }
+      ]
     },
     {
-      "business_id": "BIZ-005",
-      "legal_name": "Garcia Restaurant Group LLC",
-      "dba_name": "Casa Garcia",
-      "ein": "28-4443322",
-      "entity_type": "LLC",
-      "formation_state": "PA",
-      "formation_date": "2018-05-01",
-      "business_address": "2100 Murray Avenue",
-      "business_city": "Pittsburgh",
+      "business_id": "BIZ-54521",
+      "legal_name": "Smith Ventures LLC",
+      "ein": "99-1485374",
+      "business_address": "4709 Main St",
+      "business_city": "Shadyside",
       "business_state": "PA",
-      "business_zip": "15217",
-      "mailing_address": "789 Elm St",
-      "mailing_city": "Pittsburgh",
-      "mailing_state": "PA",
-      "mailing_zip": "15206",
-      "primary_contact": "Maria E Garcia",
-      "contact_title": "Owner",
-      "contact_phone": "(412) 555-3333",
-      "contact_email": "maria@casagarcia.com",
-      "contact_ssn_last4": "7890",
+      "business_zip": "17962",
+      "primary_contact": "Linda Smith",
+      "contact_phone": "(524) 555-9223",
+      "contact_email": "linda@smithbiz.com",
+      "contact_ssn_last4": "5460",
       "authorized_signers": [
-        {"name": "Maria Elena Garcia-Lopez", "title": "Managing Member", "ownership_pct": 100}
-      ],
-      "accounts": [
-        {"type": "BUSINESS_CHECKING", "number": "****8040", "balance": 67500.00, "opened": "2018-06-01"},
-        {"type": "MERCHANT_SERVICES", "number": "****8041", "monthly_volume": 125000},
-        {"type": "EQUIPMENT_LOAN", "number": "****8042", "balance": -28000.00, "rate": 5.75}
-      ],
-      "annual_revenue": 1800000,
-      "naics_code": "722511",
-      "relationship_start": "2018-06-01"
+        {
+          "name": "Linda Smith",
+          "role": "OWNER"
+        }
+      ]
+    },
+    {
+      "business_id": "BIZ-13483",
+      "legal_name": "Smith Consulting LLC",
+      "ein": "99-3906566",
+      "business_address": "9727 Park Way",
+      "business_city": "Cranberry Township",
+      "business_state": "PA",
+      "business_zip": "15152",
+      "primary_contact": "Linda Smith",
+      "contact_phone": "(201) 555-2008",
+      "contact_email": "linda@smithbiz.com",
+      "contact_ssn_last4": "7474",
+      "authorized_signers": [
+        {
+          "name": "Linda Smith",
+          "role": "OWNER"
+        }
+      ]
+    },
+    {
+      "business_id": "BIZ-31327",
+      "legal_name": "Miller Ventures LLC",
+      "ein": "99-9183287",
+      "business_address": "6791 Elm St",
+      "business_city": "Philadelphia",
+      "business_state": "PA",
+      "business_zip": "16129",
+      "primary_contact": "David Miller",
+      "contact_phone": "(554) 555-5112",
+      "contact_email": "david@millerbiz.com",
+      "contact_ssn_last4": "4617",
+      "authorized_signers": [
+        {
+          "name": "David Miller",
+          "role": "OWNER"
+        }
+      ]
+    },
+    {
+      "business_id": "BIZ-50123",
+      "legal_name": "Miller Group LLC",
+      "ein": "99-6646202",
+      "business_address": "9563 Maple Dr",
+      "business_city": "Shadyside",
+      "business_state": "PA",
+      "business_zip": "16572",
+      "primary_contact": "Maria Miller",
+      "contact_phone": "(613) 555-7873",
+      "contact_email": "maria@millerbiz.com",
+      "contact_ssn_last4": "7861",
+      "authorized_signers": [
+        {
+          "name": "Maria Miller",
+          "role": "OWNER"
+        }
+      ]
+    },
+    {
+      "business_id": "BIZ-48334",
+      "legal_name": "Davis Ventures LLC",
+      "ein": "99-5828258",
+      "business_address": "449 Liberty Blvd",
+      "business_city": "Philadelphia",
+      "business_state": "PA",
+      "business_zip": "15034",
+      "primary_contact": "Robert Davis",
+      "contact_phone": "(821) 555-2364",
+      "contact_email": "robert@davisbiz.com",
+      "contact_ssn_last4": "7314",
+      "authorized_signers": [
+        {
+          "name": "Robert Davis",
+          "role": "OWNER"
+        }
+      ]
+    },
+    {
+      "business_id": "BIZ-62712",
+      "legal_name": "Smith Consulting LLC",
+      "ein": "99-4832519",
+      "business_address": "8470 Maple Dr",
+      "business_city": "Cranberry Township",
+      "business_state": "PA",
+      "business_zip": "16936",
+      "primary_contact": "John Smith",
+      "contact_phone": "(534) 555-7095",
+      "contact_email": "john@smithbiz.com",
+      "contact_ssn_last4": "4991",
+      "authorized_signers": [
+        {
+          "name": "John Smith",
+          "role": "OWNER"
+        }
+      ]
+    },
+    {
+      "business_id": "BIZ-59574",
+      "legal_name": "Johnson Properties LLC",
+      "ein": "99-6445143",
+      "business_address": "3585 Liberty Blvd",
+      "business_city": "Fox Chapel",
+      "business_state": "PA",
+      "business_zip": "16989",
+      "primary_contact": "Jane Johnson",
+      "contact_phone": "(468) 555-5562",
+      "contact_email": "jane@johnsonbiz.com",
+      "contact_ssn_last4": "6538",
+      "authorized_signers": [
+        {
+          "name": "Jane Johnson",
+          "role": "OWNER"
+        }
+      ]
+    },
+    {
+      "business_id": "BIZ-74958",
+      "legal_name": "Wilson Consulting LLC",
+      "ein": "99-2964910",
+      "business_address": "6382 Liberty Blvd",
+      "business_city": "Philadelphia",
+      "business_state": "PA",
+      "business_zip": "17511",
+      "primary_contact": "David Wilson",
+      "contact_phone": "(589) 555-5951",
+      "contact_email": "david@wilsonbiz.com",
+      "contact_ssn_last4": "3490",
+      "authorized_signers": [
+        {
+          "name": "David Wilson",
+          "role": "OWNER"
+        }
+      ]
+    },
+    {
+      "business_id": "BIZ-83265",
+      "legal_name": "O'Brien Properties LLC",
+      "ein": "99-7880237",
+      "business_address": "1844 Maple Dr",
+      "business_city": "Fox Chapel",
+      "business_state": "PA",
+      "business_zip": "16894",
+      "primary_contact": "Maria O'Brien",
+      "contact_phone": "(800) 555-7416",
+      "contact_email": "maria@o'brienbiz.com",
+      "contact_ssn_last4": "7765",
+      "authorized_signers": [
+        {
+          "name": "Maria O'Brien",
+          "role": "OWNER"
+        }
+      ]
+    },
+    {
+      "business_id": "BIZ-26391",
+      "legal_name": "Rodriguez Consulting LLC",
+      "ein": "99-5482074",
+      "business_address": "6078 Highland Ave",
+      "business_city": "Cranberry Township",
+      "business_state": "PA",
+      "business_zip": "17650",
+      "primary_contact": "David Rodriguez",
+      "contact_phone": "(438) 555-3981",
+      "contact_email": "david@rodriguezbiz.com",
+      "contact_ssn_last4": "2946",
+      "authorized_signers": [
+        {
+          "name": "David Rodriguez",
+          "role": "OWNER"
+        }
+      ]
+    },
+    {
+      "business_id": "BIZ-78758",
+      "legal_name": "Chen Group LLC",
+      "ein": "99-9793756",
+      "business_address": "5217 Main St",
+      "business_city": "Philadelphia",
+      "business_state": "PA",
+      "business_zip": "17800",
+      "primary_contact": "Maria Chen",
+      "contact_phone": "(940) 555-6934",
+      "contact_email": "maria@chenbiz.com",
+      "contact_ssn_last4": "7458",
+      "authorized_signers": [
+        {
+          "name": "Maria Chen",
+          "role": "OWNER"
+        }
+      ]
+    },
+    {
+      "business_id": "BIZ-76676",
+      "legal_name": "Torres Ventures LLC",
+      "ein": "99-8145382",
+      "business_address": "1764 Park Way",
+      "business_city": "Squirrel Hill",
+      "business_state": "PA",
+      "business_zip": "18637",
+      "primary_contact": "William Torres",
+      "contact_phone": "(639) 555-9704",
+      "contact_email": "william@torresbiz.com",
+      "contact_ssn_last4": "4817",
+      "authorized_signers": [
+        {
+          "name": "William Torres",
+          "role": "OWNER"
+        }
+      ]
+    },
+    {
+      "business_id": "BIZ-45145",
+      "legal_name": "Johnson Properties LLC",
+      "ein": "99-4905680",
+      "business_address": "9518 Highland Ave",
+      "business_city": "Shadyside",
+      "business_state": "PA",
+      "business_zip": "15099",
+      "primary_contact": "Robert Johnson",
+      "contact_phone": "(673) 555-9010",
+      "contact_email": "robert@johnsonbiz.com",
+      "contact_ssn_last4": "7938",
+      "authorized_signers": [
+        {
+          "name": "Robert Johnson",
+          "role": "OWNER"
+        }
+      ]
     }
   ]
 }

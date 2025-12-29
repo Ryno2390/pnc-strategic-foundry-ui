@@ -1,252 +1,312 @@
 {
   "source_system": "WEALTH_ADVISORY",
-  "extract_date": "2025-12-22",
+  "extraction_date": "2025-12-29T11:14:59.416605",
   "records": [
     {
-      "client_id": "WM-001",
-      "client_name": "Jonathan R. Smith",
-      "client_type": "Individual",
-      "tax_id_last4": "1234",
-      "birth_date": "1975-03-15",
+      "client_id": "WM-43741",
+      "client_name": "John O Smith",
+      "tax_id_last4": "4634",
+      "birth_date": "1956-08-03",
       "residence": {
-        "street": "123 Main Street, Apartment 4B",
-        "city": "Pittsburgh",
-        "state": "PA",
-        "postal": "15213"
-      },
-      "phone": "412.555.1234",
-      "mobile": "(412) 555-9876",
-      "email": "jonathan.smith@personalmail.com",
-      "advisor": "Margaret Thompson",
-      "advisor_id": "ADV-101",
-      "client_segment": "Private Banking",
-      "portfolios": [
-        {
-          "name": "Smith Family Trust",
-          "type": "REVOCABLE_TRUST",
-          "value": 1250000.00,
-          "beneficiaries": ["Jane M. Smith", "Emma Smith", "Michael Smith"]
-        },
-        {
-          "name": "JR Smith IRA",
-          "type": "TRADITIONAL_IRA",
-          "value": 485000.00,
-          "beneficiaries": ["Jane M. Smith"]
-        },
-        {
-          "name": "Smith 529 - Emma",
-          "type": "529_PLAN",
-          "value": 125000.00,
-          "beneficiaries": ["Emma Smith"]
-        },
-        {
-          "name": "Smith 529 - Michael",
-          "type": "529_PLAN",
-          "value": 85000.00,
-          "beneficiaries": ["Michael Smith"]
-        }
-      ],
-      "total_aum": 1945000.00,
-      "household_members": ["Jane M. Smith (Spouse)", "Emma Smith (Daughter)", "Michael Smith (Son)"],
-      "risk_profile": "Moderate Growth",
-      "relationship_start": "2019-01-15"
-    },
-    {
-      "client_id": "WM-002",
-      "client_name": "Jane Marie Smith",
-      "client_type": "Individual",
-      "tax_id_last4": "5678",
-      "birth_date": "08/22/1977",
-      "residence": {
-        "street": "123 Main St #4B",
-        "city": "Pittsburgh",
-        "state": "Pennsylvania",
-        "postal": "15213-4521"
-      },
-      "phone": "(412) 555-9876",
-      "mobile": null,
-      "email": "jane.smith@outlook.com",
-      "advisor": "Margaret Thompson",
-      "advisor_id": "ADV-101",
-      "client_segment": "Private Banking",
-      "portfolios": [
-        {
-          "name": "Jane Smith Roth IRA",
-          "type": "ROTH_IRA",
-          "value": 325000.00,
-          "beneficiaries": ["Jonathan R. Smith"]
-        },
-        {
-          "name": "Smith Joint Brokerage",
-          "type": "JOINT_BROKERAGE",
-          "value": 450000.00,
-          "co_owner": "Jonathan R. Smith"
-        }
-      ],
-      "total_aum": 775000.00,
-      "household_members": ["Jonathan R. Smith (Spouse)"],
-      "risk_profile": "Moderate",
-      "relationship_start": "2019-01-15"
-    },
-    {
-      "client_id": "WM-003",
-      "client_name": "Robert A. Johnson",
-      "client_type": "Individual",
-      "tax_id_last4": "3456",
-      "birth_date": "1968-11-03",
-      "residence": {
-        "street": "456 Oak Avenue Suite 100",
+        "street": "5913 Main St",
         "city": "Philadelphia",
         "state": "PA",
-        "postal": "19103"
+        "postal": "16135"
       },
-      "phone": "2155554567",
-      "mobile": "215-555-7890",
-      "email": "rjohnson@johnsonproperties.com",
-      "advisor": "Steven Richards",
-      "advisor_id": "ADV-205",
-      "client_segment": "Business Owner",
-      "portfolios": [
-        {
-          "name": "Johnson Family LP",
-          "type": "FAMILY_LP",
-          "value": 3500000.00,
-          "beneficiaries": ["Johnson Properties Inc", "Sarah Johnson", "Robert Johnson Jr"]
-        },
-        {
-          "name": "RAJ SEP-IRA",
-          "type": "SEP_IRA",
-          "value": 890000.00,
-          "beneficiaries": ["Sarah Johnson"]
-        },
-        {
-          "name": "Johnson Charitable Trust",
-          "type": "CHARITABLE_TRUST",
-          "value": 500000.00,
-          "beneficiaries": ["Philadelphia Foundation"]
-        }
-      ],
-      "total_aum": 4890000.00,
-      "household_members": ["Sarah Johnson (Spouse)", "Robert Johnson Jr (Son)"],
-      "risk_profile": "Growth",
-      "relationship_start": "2012-03-01"
+      "phone": "(666) 555-8763",
+      "email": "john@wealth-pnc.com",
+      "household_members": [
+        "John Smith (Head)"
+      ]
     },
     {
-      "client_id": "WM-004",
-      "client_name": "William Chen",
-      "client_type": "Individual",
-      "tax_id_last4": "2345",
-      "birth_date": "12/01/1990",
+      "client_id": "WM-28717",
+      "client_name": "John U Johnson",
+      "tax_id_last4": "6316",
+      "birth_date": "1966-03-25",
       "residence": {
-        "street": "321 River Rd, Unit 12",
-        "city": "Sewickley",
-        "state": "PA",
-        "postal": "15143"
-      },
-      "phone": "724-555-8888",
-      "mobile": "7245559999",
-      "email": "will.chen@techstartup.io",
-      "advisor": "Jennifer Park",
-      "advisor_id": "ADV-312",
-      "client_segment": "Emerging Wealth",
-      "portfolios": [
-        {
-          "name": "Chen Tech Equity",
-          "type": "BROKERAGE",
-          "value": 2800000.00,
-          "notes": "Concentrated position - ChenTech stock"
-        },
-        {
-          "name": "W Chen Roth IRA",
-          "type": "ROTH_IRA",
-          "value": 145000.00,
-          "beneficiaries": ["Parents - Chen Family"]
-        }
-      ],
-      "total_aum": 2945000.00,
-      "household_members": [],
-      "risk_profile": "Aggressive Growth",
-      "relationship_start": "2021-06-15"
-    },
-    {
-      "client_id": "WM-005",
-      "client_name": "Sarah Katherine O'Brien",
-      "client_type": "Individual",
-      "tax_id_last4": "6789",
-      "birth_date": "1985-05-28",
-      "residence": {
-        "street": "555 Highland Avenue",
-        "city": "Fox Chapel",
-        "state": "PA",
-        "postal": "15238"
-      },
-      "phone": "412-555-6666",
-      "mobile": "412-555-6667",
-      "email": "sarah@highlandlegal.com",
-      "advisor": "Margaret Thompson",
-      "advisor_id": "ADV-101",
-      "client_segment": "Professional",
-      "portfolios": [
-        {
-          "name": "O'Brien Living Trust",
-          "type": "REVOCABLE_TRUST",
-          "value": 850000.00,
-          "beneficiaries": ["O'Brien Family Foundation"]
-        },
-        {
-          "name": "SKO Solo 401k",
-          "type": "SOLO_401K",
-          "value": 425000.00,
-          "employer": "Highland Legal Partners PLLC"
-        },
-        {
-          "name": "O'Brien Brokerage",
-          "type": "INDIVIDUAL_BROKERAGE",
-          "value": 380000.00,
-          "beneficiaries": []
-        }
-      ],
-      "total_aum": 1655000.00,
-      "household_members": [],
-      "risk_profile": "Moderate Growth",
-      "relationship_start": "2018-02-01"
-    },
-    {
-      "client_id": "WM-006",
-      "client_name": "Dr. Michael Torres",
-      "client_type": "Individual",
-      "tax_id_last4": "4455",
-      "birth_date": "1972-09-14",
-      "residence": {
-        "street": "890 Beechwood Blvd",
+        "street": "4630 Liberty Blvd",
         "city": "Pittsburgh",
         "state": "PA",
-        "postal": "15206"
+        "postal": "18901"
       },
-      "phone": "(412) 555-7777",
-      "mobile": "412.555.8888",
-      "email": "mtorres@highlandlegal.com",
-      "advisor": "Margaret Thompson",
-      "advisor_id": "ADV-101",
-      "client_segment": "Professional",
-      "portfolios": [
-        {
-          "name": "Torres Family Trust",
-          "type": "IRREVOCABLE_TRUST",
-          "value": 1200000.00,
-          "beneficiaries": ["Torres Children Trust"]
-        },
-        {
-          "name": "MT 401k Rollover",
-          "type": "ROLLOVER_IRA",
-          "value": 650000.00,
-          "beneficiaries": ["Elena Torres"]
-        }
-      ],
-      "total_aum": 1850000.00,
-      "household_members": ["Elena Torres (Spouse)"],
-      "risk_profile": "Moderate",
-      "relationship_start": "2019-08-15"
+      "phone": "(520) 555-7998",
+      "email": "john@wealth-pnc.com",
+      "household_members": [
+        "John Johnson (Head)"
+      ]
+    },
+    {
+      "client_id": "WM-98689",
+      "client_name": "Michael E Smith",
+      "tax_id_last4": "8856",
+      "birth_date": "1950-10-09",
+      "residence": {
+        "street": "9805 Elm St",
+        "city": "Squirrel Hill",
+        "state": "PA",
+        "postal": "19986"
+      },
+      "phone": "(900) 555-8676",
+      "email": "michael@wealth-pnc.com",
+      "household_members": [
+        "Michael Smith (Head)"
+      ]
+    },
+    {
+      "client_id": "WM-14909",
+      "client_name": "Robert W Davis",
+      "tax_id_last4": "2237",
+      "birth_date": "2000-12-17",
+      "residence": {
+        "street": "3427 Oak Ave",
+        "city": "Fox Chapel",
+        "state": "PA",
+        "postal": "18058"
+      },
+      "phone": "(717) 555-6576",
+      "email": "robert@wealth-pnc.com",
+      "household_members": [
+        "Robert Davis (Head)"
+      ]
+    },
+    {
+      "client_id": "WM-16661",
+      "client_name": "Maria F O'Brien",
+      "tax_id_last4": "6330",
+      "birth_date": "1984-06-17",
+      "residence": {
+        "street": "1769 Main St",
+        "city": "Squirrel Hill",
+        "state": "PA",
+        "postal": "19441"
+      },
+      "phone": "(745) 555-8313",
+      "email": "maria@wealth-pnc.com",
+      "household_members": [
+        "Maria O'Brien (Head)"
+      ]
+    },
+    {
+      "client_id": "WM-14152",
+      "client_name": "Linda V Smith",
+      "tax_id_last4": "5460",
+      "birth_date": "1961-02-13",
+      "residence": {
+        "street": "4709 Main St",
+        "city": "Shadyside",
+        "state": "PA",
+        "postal": "17962"
+      },
+      "phone": "(524) 555-9223",
+      "email": "linda@wealth-pnc.com",
+      "household_members": [
+        "Linda Smith (Head)"
+      ]
+    },
+    {
+      "client_id": "WM-24631",
+      "client_name": "Robert P Smith",
+      "tax_id_last4": "7718",
+      "birth_date": "1988-09-18",
+      "residence": {
+        "street": "2528 Maple Dr",
+        "city": "Pittsburgh",
+        "state": "PA",
+        "postal": "16799"
+      },
+      "phone": "(522) 555-7747",
+      "email": "robert@wealth-pnc.com",
+      "household_members": [
+        "Robert Smith (Head)"
+      ]
+    },
+    {
+      "client_id": "WM-58399",
+      "client_name": "Linda R Smith",
+      "tax_id_last4": "7474",
+      "birth_date": "2005-11-26",
+      "residence": {
+        "street": "9727 Park Way",
+        "city": "Cranberry Township",
+        "state": "PA",
+        "postal": "15152"
+      },
+      "phone": "(201) 555-2008",
+      "email": "linda@wealth-pnc.com",
+      "household_members": [
+        "Linda Smith (Head)"
+      ]
+    },
+    {
+      "client_id": "WM-87460",
+      "client_name": "Elizabeth E Torres",
+      "tax_id_last4": "5772",
+      "birth_date": "1962-04-12",
+      "residence": {
+        "street": "3311 Elm St",
+        "city": "Fox Chapel",
+        "state": "PA",
+        "postal": "16493"
+      },
+      "phone": "(530) 555-9583",
+      "email": "elizabeth@wealth-pnc.com",
+      "household_members": [
+        "Elizabeth Torres (Head)"
+      ]
+    },
+    {
+      "client_id": "WM-73882",
+      "client_name": "David O Rodriguez",
+      "tax_id_last4": "6471",
+      "birth_date": "1962-11-14",
+      "residence": {
+        "street": "9877 Main St",
+        "city": "Pittsburgh",
+        "state": "PA",
+        "postal": "17991"
+      },
+      "phone": "(783) 555-4362",
+      "email": "david@wealth-pnc.com",
+      "household_members": [
+        "David Rodriguez (Head)"
+      ]
+    },
+    {
+      "client_id": "WM-86818",
+      "client_name": "David G Torres",
+      "tax_id_last4": "2349",
+      "birth_date": "1962-12-02",
+      "residence": {
+        "street": "6223 Maple Dr",
+        "city": "Squirrel Hill",
+        "state": "PA",
+        "postal": "19447"
+      },
+      "phone": "(258) 555-6563",
+      "email": "david@wealth-pnc.com",
+      "household_members": [
+        "David Torres (Head)"
+      ]
+    },
+    {
+      "client_id": "WM-98138",
+      "client_name": "Elizabeth H Torres",
+      "tax_id_last4": "7362",
+      "birth_date": "1976-12-27",
+      "residence": {
+        "street": "4734 Liberty Blvd",
+        "city": "Shadyside",
+        "state": "PA",
+        "postal": "16210"
+      },
+      "phone": "(333) 555-7010",
+      "email": "elizabeth@wealth-pnc.com",
+      "household_members": [
+        "Elizabeth Torres (Head)"
+      ]
+    },
+    {
+      "client_id": "WM-63431",
+      "client_name": "David Q Wilson",
+      "tax_id_last4": "3490",
+      "birth_date": "1973-04-18",
+      "residence": {
+        "street": "6382 Liberty Blvd",
+        "city": "Philadelphia",
+        "state": "PA",
+        "postal": "17511"
+      },
+      "phone": "(589) 555-5951",
+      "email": "david@wealth-pnc.com",
+      "household_members": [
+        "David Wilson (Head)"
+      ]
+    },
+    {
+      "client_id": "WM-85841",
+      "client_name": "Elizabeth I Miller",
+      "tax_id_last4": "2549",
+      "birth_date": "1952-03-03",
+      "residence": {
+        "street": "9328 Liberty Blvd",
+        "city": "Pittsburgh",
+        "state": "PA",
+        "postal": "18367"
+      },
+      "phone": "(838) 555-3931",
+      "email": "elizabeth@wealth-pnc.com",
+      "household_members": [
+        "Elizabeth Miller (Head)"
+      ]
+    },
+    {
+      "client_id": "WM-45172",
+      "client_name": "Sarah P Johnson",
+      "tax_id_last4": "1516",
+      "birth_date": "1954-05-05",
+      "residence": {
+        "street": "1886 Oak Ave",
+        "city": "Pittsburgh",
+        "state": "PA",
+        "postal": "15802"
+      },
+      "phone": "(251) 555-9039",
+      "email": "sarah@wealth-pnc.com",
+      "household_members": [
+        "Sarah Johnson (Head)"
+      ]
+    },
+    {
+      "client_id": "WM-40277",
+      "client_name": "Linda S O'Brien",
+      "tax_id_last4": "7283",
+      "birth_date": "1956-02-14",
+      "residence": {
+        "street": "539 Highland Ave",
+        "city": "Shadyside",
+        "state": "PA",
+        "postal": "16522"
+      },
+      "phone": "(803) 555-1692",
+      "email": "linda@wealth-pnc.com",
+      "household_members": [
+        "Linda O'Brien (Head)"
+      ]
+    },
+    {
+      "client_id": "WM-67512",
+      "client_name": "Maria Z Chen",
+      "tax_id_last4": "7458",
+      "birth_date": "1970-10-13",
+      "residence": {
+        "street": "5217 Main St",
+        "city": "Philadelphia",
+        "state": "PA",
+        "postal": "17800"
+      },
+      "phone": "(940) 555-6934",
+      "email": "maria@wealth-pnc.com",
+      "household_members": [
+        "Maria Chen (Head)"
+      ]
+    },
+    {
+      "client_id": "WM-44379",
+      "client_name": "Jane T Smith",
+      "tax_id_last4": "2739",
+      "birth_date": "1993-09-06",
+      "residence": {
+        "street": "5397 Highland Ave",
+        "city": "Shadyside",
+        "state": "PA",
+        "postal": "15630"
+      },
+      "phone": "(498) 555-1823",
+      "email": "jane@wealth-pnc.com",
+      "household_members": [
+        "Jane Smith (Head)"
+      ]
     }
   ]
 }

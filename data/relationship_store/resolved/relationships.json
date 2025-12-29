@@ -1,113 +1,218 @@
 [
   {
-    "entity1_id": "CON-001",
-    "entity2_id": "CON-002",
-    "entity1_name": "JOHN R SMITH",
-    "entity2_name": "JANE M SMITH",
-    "relationship_type": "SPOUSE",
-    "confidence": 0.85,
+    "entity1_id": "CON-16871",
+    "entity2_id": "BIZ-91435",
+    "entity1_name": "MICHAEL JOHNSON",
+    "entity2_name": "JOHNSON VENTURES LLC",
+    "relationship_type": "BUSINESS_OWNER",
+    "confidence": 0.9,
     "evidence": [
-      "Same address: 123 MAIN ST APT 4B PITTSBURGH PA 15213",
-      "Same last name: SMITH",
-      "Referenced as spouse/related in CONSUMER_CORE",
-      "Referenced as spouse/related in CONSUMER_CORE"
+      "Listed as authorized signer for JOHNSON VENTURES LLC",
+      "Name match: Michael Johnson"
     ]
   },
   {
-    "entity1_id": "BIZ-001-CONTACT",
-    "entity2_id": "WM-002",
-    "entity1_name": "J SMITH",
-    "entity2_name": "JANE MARIE SMITH",
-    "relationship_type": "SPOUSE",
-    "confidence": 0.85,
+    "entity1_id": "CON-50612",
+    "entity2_id": "BIZ-82964",
+    "entity1_name": "JOHN GARCIA",
+    "entity2_name": "GARCIA VENTURES LLC",
+    "relationship_type": "BUSINESS_OWNER",
+    "confidence": 0.9,
     "evidence": [
-      "Same address: 123 MAIN ST APT 4B PITTSBURGH PA 15213",
-      "Same last name: SMITH",
-      "Referenced as spouse/related in WEALTH_ADVISORY"
+      "Listed as authorized signer for GARCIA VENTURES LLC",
+      "Name match: John Garcia"
     ]
   },
   {
-    "entity1_id": "CON-001",
-    "entity2_id": "BIZ-001",
-    "entity1_name": "JOHN R SMITH",
+    "entity1_id": "BIZ-75315-CONTACT",
+    "entity2_id": "BIZ-75315",
+    "entity1_name": "ELIZABETH DAVIS",
+    "entity2_name": "DAVIS CONSULTING LLC",
+    "relationship_type": "BUSINESS_OWNER",
+    "confidence": 0.9,
+    "evidence": [
+      "Listed as authorized signer for DAVIS CONSULTING LLC",
+      "Name match: Elizabeth Davis"
+    ]
+  },
+  {
+    "entity1_id": "CON-20453",
+    "entity2_id": "BIZ-60063",
+    "entity1_name": "DAVID JOHNSON",
+    "entity2_name": "JOHNSON CONSULTING LLC",
+    "relationship_type": "BUSINESS_OWNER",
+    "confidence": 0.9,
+    "evidence": [
+      "Listed as authorized signer for JOHNSON CONSULTING LLC",
+      "Name match: David Johnson"
+    ]
+  },
+  {
+    "entity1_id": "CON-33202",
+    "entity2_id": "BIZ-91944",
+    "entity1_name": "MARIA O'BRIEN",
+    "entity2_name": "O'BRIEN VENTURES LLC",
+    "relationship_type": "BUSINESS_OWNER",
+    "confidence": 0.9,
+    "evidence": [
+      "Listed as authorized signer for O'BRIEN VENTURES LLC",
+      "Name match: Maria O'Brien"
+    ]
+  },
+  {
+    "entity1_id": "CON-19490",
+    "entity2_id": "BIZ-54521",
+    "entity1_name": "LINDA SMITH",
+    "entity2_name": "SMITH VENTURES LLC",
+    "relationship_type": "BUSINESS_OWNER",
+    "confidence": 0.9,
+    "evidence": [
+      "Listed as authorized signer for SMITH VENTURES LLC",
+      "Name match: Linda Smith"
+    ]
+  },
+  {
+    "entity1_id": "CON-19490",
+    "entity2_id": "BIZ-13483",
+    "entity1_name": "LINDA SMITH",
     "entity2_name": "SMITH CONSULTING LLC",
     "relationship_type": "BUSINESS_OWNER",
     "confidence": 0.9,
     "evidence": [
       "Listed as authorized signer for SMITH CONSULTING LLC",
-      "Name match: John R. Smith"
+      "Name match: Linda Smith"
     ]
   },
   {
-    "entity1_id": "CON-002",
-    "entity2_id": "BIZ-001",
-    "entity1_name": "JANE M SMITH",
+    "entity1_id": "CON-38182",
+    "entity2_id": "BIZ-31327",
+    "entity1_name": "DAVID MILLER",
+    "entity2_name": "MILLER VENTURES LLC",
+    "relationship_type": "BUSINESS_OWNER",
+    "confidence": 0.9,
+    "evidence": [
+      "Listed as authorized signer for MILLER VENTURES LLC",
+      "Name match: David Miller"
+    ]
+  },
+  {
+    "entity1_id": "CON-90339",
+    "entity2_id": "BIZ-50123",
+    "entity1_name": "MARIA MILLER",
+    "entity2_name": "MILLER GROUP LLC",
+    "relationship_type": "BUSINESS_OWNER",
+    "confidence": 0.9,
+    "evidence": [
+      "Listed as authorized signer for MILLER GROUP LLC",
+      "Name match: Maria Miller"
+    ]
+  },
+  {
+    "entity1_id": "CON-57887",
+    "entity2_id": "BIZ-48334",
+    "entity1_name": "ROBERT DAVIS",
+    "entity2_name": "DAVIS VENTURES LLC",
+    "relationship_type": "BUSINESS_OWNER",
+    "confidence": 0.9,
+    "evidence": [
+      "Listed as authorized signer for DAVIS VENTURES LLC",
+      "Name match: Robert Davis"
+    ]
+  },
+  {
+    "entity1_id": "CON-79787",
+    "entity2_id": "BIZ-62712",
+    "entity1_name": "JOHN SMITH",
     "entity2_name": "SMITH CONSULTING LLC",
     "relationship_type": "BUSINESS_OWNER",
     "confidence": 0.9,
     "evidence": [
       "Listed as authorized signer for SMITH CONSULTING LLC",
-      "Name match: Jane Smith"
+      "Name match: John Smith"
     ]
   },
   {
-    "entity1_id": "CON-003",
-    "entity2_id": "BIZ-002",
+    "entity1_id": "CON-60825",
+    "entity2_id": "BIZ-59574",
+    "entity1_name": "JOHN JOHNSON",
+    "entity2_name": "JOHNSON PROPERTIES LLC",
+    "relationship_type": "BUSINESS_OWNER",
+    "confidence": 0.9,
+    "evidence": [
+      "Listed as authorized signer for JOHNSON PROPERTIES LLC",
+      "Name match: Jane Johnson"
+    ]
+  },
+  {
+    "entity1_id": "CON-55031",
+    "entity2_id": "BIZ-74958",
+    "entity1_name": "DAVID WILSON",
+    "entity2_name": "WILSON CONSULTING LLC",
+    "relationship_type": "BUSINESS_OWNER",
+    "confidence": 0.9,
+    "evidence": [
+      "Listed as authorized signer for WILSON CONSULTING LLC",
+      "Name match: David Wilson"
+    ]
+  },
+  {
+    "entity1_id": "CON-33202",
+    "entity2_id": "BIZ-83265",
+    "entity1_name": "MARIA O'BRIEN",
+    "entity2_name": "O'BRIEN PROPERTIES LLC",
+    "relationship_type": "BUSINESS_OWNER",
+    "confidence": 0.9,
+    "evidence": [
+      "Listed as authorized signer for O'BRIEN PROPERTIES LLC",
+      "Name match: Maria O'Brien"
+    ]
+  },
+  {
+    "entity1_id": "CON-69265",
+    "entity2_id": "BIZ-26391",
+    "entity1_name": "DAVID RODRIGUEZ",
+    "entity2_name": "RODRIGUEZ CONSULTING LLC",
+    "relationship_type": "BUSINESS_OWNER",
+    "confidence": 0.9,
+    "evidence": [
+      "Listed as authorized signer for RODRIGUEZ CONSULTING LLC",
+      "Name match: David Rodriguez"
+    ]
+  },
+  {
+    "entity1_id": "CON-69676",
+    "entity2_id": "BIZ-78758",
+    "entity1_name": "MARIA CHEN",
+    "entity2_name": "CHEN GROUP LLC",
+    "relationship_type": "BUSINESS_OWNER",
+    "confidence": 0.9,
+    "evidence": [
+      "Listed as authorized signer for CHEN GROUP LLC",
+      "Name match: Maria Chen"
+    ]
+  },
+  {
+    "entity1_id": "CON-56057",
+    "entity2_id": "BIZ-76676",
+    "entity1_name": "WILLIAM TORRES",
+    "entity2_name": "TORRES VENTURES LLC",
+    "relationship_type": "BUSINESS_OWNER",
+    "confidence": 0.9,
+    "evidence": [
+      "Listed as authorized signer for TORRES VENTURES LLC",
+      "Name match: William Torres"
+    ]
+  },
+  {
+    "entity1_id": "BIZ-45145-CONTACT",
+    "entity2_id": "BIZ-45145",
     "entity1_name": "ROBERT JOHNSON",
-    "entity2_name": "JOHNSON PROPERTIES INC",
+    "entity2_name": "JOHNSON PROPERTIES LLC",
     "relationship_type": "BUSINESS_OWNER",
     "confidence": 0.9,
     "evidence": [
-      "Listed as authorized signer for JOHNSON PROPERTIES INC",
+      "Listed as authorized signer for JOHNSON PROPERTIES LLC",
       "Name match: Robert Johnson"
-    ]
-  },
-  {
-    "entity1_id": "CON-005",
-    "entity2_id": "BIZ-003",
-    "entity1_name": "WILLIAM T CHEN",
-    "entity2_name": "CHEN TECHNOLOGY VENTURES LLC",
-    "relationship_type": "BUSINESS_OWNER",
-    "confidence": 0.9,
-    "evidence": [
-      "Listed as authorized signer for CHEN TECHNOLOGY VENTURES LLC",
-      "Name match: William T Chen"
-    ]
-  },
-  {
-    "entity1_id": "CON-006",
-    "entity2_id": "BIZ-004",
-    "entity1_name": "SARAH K O'BRIEN",
-    "entity2_name": "HIGHLAND LEGAL PARTNERS PLLC",
-    "relationship_type": "BUSINESS_OWNER",
-    "confidence": 0.9,
-    "evidence": [
-      "Listed as authorized signer for HIGHLAND LEGAL PARTNERS PLLC",
-      "Name match: Sarah K O'Brien"
-    ]
-  },
-  {
-    "entity1_id": "WM-006",
-    "entity2_id": "BIZ-004",
-    "entity1_name": "MICHAEL TORRES",
-    "entity2_name": "HIGHLAND LEGAL PARTNERS PLLC",
-    "relationship_type": "BUSINESS_OWNER",
-    "confidence": 0.9,
-    "evidence": [
-      "Listed as authorized signer for HIGHLAND LEGAL PARTNERS PLLC",
-      "Name match: Michael Torres"
-    ]
-  },
-  {
-    "entity1_id": "CON-004",
-    "entity2_id": "BIZ-005",
-    "entity1_name": "MARIA E GARCIA-LOPEZ",
-    "entity2_name": "GARCIA RESTAURANT GROUP LLC",
-    "relationship_type": "BUSINESS_OWNER",
-    "confidence": 0.9,
-    "evidence": [
-      "Listed as authorized signer for GARCIA RESTAURANT GROUP LLC",
-      "Name match: Maria Elena Garcia-Lopez"
     ]
   }
 ]

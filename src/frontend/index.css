@@ -145,7 +145,6 @@ html, body {
 
 /* Profile Trigger (Top Left) */
 .profile-portal-trigger {
-    position: fixed; top: 24px; left: 24px; z-index: 1100;
     width: 48px; height: 48px; border-radius: 50%;
     background: var(--pnc-dark-grey); border: 2px solid var(--white);
     cursor: pointer; display: flex; align-items: center; justify-content: center;
@@ -576,6 +575,31 @@ html, body {
 }
 
 /* Input Bar & Home Button */
+.top-actions-bar {
+    position: fixed; top: 24px; left: 24px; z-index: 1100;
+    display: flex; gap: 16px; align-items: center;
+}
+
+.profile-portal-trigger, .graph-explorer-trigger {
+    position: relative; top: auto; left: auto;
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--pnc-dark-grey); border: 2px solid var(--white);
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    color: var(--white); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.profile-portal-trigger:hover, .graph-explorer-trigger:hover { 
+    transform: scale(1.1); 
+    background: var(--pnc-orange); 
+    box-shadow: 0 0 0 2px var(--pnc-orange), 0 8px 16px rgba(0,0,0,0.2); 
+}
+
+.detail-modal-content.graph-modal {
+    max-width: 90vw;
+    width: 1200px;
+}
+
 .floating-input-container { position: absolute; bottom: 30px; width: 100%; display: flex; justify-content: center; align-items: center; gap: 16px; z-index: 110; }
 .input-wrapper { 
     width: 100%; 

@@ -3,14 +3,20 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional, List, Dict, Any
 import sys
+import json
 from pathlib import Path
 
 # Add backend to sys.path
 sys.path.append(str(Path(__file__).parent))
 
-from relationship_engine.context_assembler import ContextAssembler, execute_tool
 from relationship_engine.guardrails import FinancialGuardrails
+from relationship_engine.adverse_action import AdverseActionReasoner
+from relationship_engine.fairness_monitor import FairnessMonitor
+from relationship_engine.context_assembler import ContextAssembler, execute_tool, Entitlement
+from privacy_engine import PrivacyScorer
 from policy_engine import PolicyEngine
+from audit_vault import AuditVault
+from cross_sell_engine import CrossSellOptimizer
 from api_utils import APIResponse, APIError, ErrorCodes
 
 app = FastAPI(
@@ -33,10 +39,60 @@ assembler = ContextAssembler()
 project_root = Path(__file__).parent.parent.parent
 policy_engine = PolicyEngine(persist_dir=str(project_root / "data" / "policy_index"))
 guardrails = FinancialGuardrails()
+audit_vault = AuditVault(storage_path=str(project_root / "data" / "audit_log.jsonl"))
+cross_sell_optimizer = CrossSellOptimizer(data_dir=str(project_root / "data" / "relationship_store" / "resolved"))
+adverse_action_reasoner = AdverseActionReasoner()
+fairness_monitor = FairnessMonitor()
+privacy_scorer = PrivacyScorer(entities_path=project_root / "data" / "relationship_store" / "resolved" / "unified_entities.json")
 
 @app.get("/")
 async def root():
     return APIResponse.success(message="PNC Strategic Foundry API is operational")
+
+@app.get("/api/v1/business/opportunities")
+async def get_opportunities():
+    """Retrieve strategic cross-sell opportunities from the entity graph."""
+    try:
+        opps = cross_sell_optimizer.analyze_opportunities()
+        return APIResponse.success(opps)
+    except Exception as e:
+        return APIResponse.error(str(e))
+
+@app.get("/api/v1/audit/logs")
+async def get_audit_logs(limit: int = 20):
+    """Retrieve recent immutable audit records."""
+    try:
+        records = audit_vault.get_records(limit=limit)
+        return APIResponse.success(records)
+    except Exception as e:
+        return APIResponse.error(str(e))
+
+@app.get("/api/v1/audit/verify")
+async def verify_audit_chain():
+    """Verify the cryptographic integrity of the entire audit vault."""
+    try:
+        result = audit_vault.verify_integrity()
+        return APIResponse.success(result)
+    except Exception as e:
+        return APIResponse.error(str(e))
+
+@app.get("/api/v1/identity/pending-reviews")
+async def get_pending_reviews():
+    """Retrieve identity matches that require human bank officer approval."""
+    try:
+        # Load match scores
+        path = project_root / "data" / "relationship_store" / "resolved" / "match_scores.json"
+        if not path.exists():
+            return APIResponse.success([])
+            
+        with open(path, "r") as f:
+            matches = json.load(f)
+            
+        # Filter for REVIEW_REQUIRED
+        pending = [m for m in matches if m["merge_action"] == "REVIEW_REQUIRED"]
+        return APIResponse.success(pending)
+    except Exception as e:
+        return APIResponse.error(str(e))
 
 @app.get("/api/v1/policy/search")
 async def search_policy(q: str = Query(..., min_length=2)):
@@ -47,12 +103,63 @@ async def search_policy(q: str = Query(..., min_length=2)):
     except Exception as e:
         return APIResponse.error(str(e))
 
-@app.get("/api/v1/customer/{name_or_id}")
-async def get_customer(name_or_id: str):
-    """Retrieve full Customer 360 view for a person."""
+@app.get("/api/v1/compliance/adverse-action")
+async def generate_adverse_action(name: str, revenue: float, income: float, debt: float, credit: int):
+    """
+    Reg B Compliance: Generate a formal Adverse Action notice based on deterministic math.
+    """
     try:
-        # The assembler expects entity_id_or_name
-        data = assembler.get_customer_360(name_or_id)
+        # 1. Run guardrails
+        payload = {
+            "annual_revenue": revenue,
+            "net_income": income,
+            "annual_debt_service": debt,
+            "personal_credit_score": credit
+        }
+        g_result = guardrails.verify_sba_eligibility(payload)
+        
+        # 2. Generate notice
+        notice = adverse_action_reasoner.generate_notice(name, g_result)
+        return APIResponse.success(notice)
+    except Exception as e:
+        return APIResponse.error(str(e))
+
+@app.get("/api/v1/compliance/privacy-risk")
+async def get_privacy_risk(city: Optional[str] = None, zip: Optional[str] = None, type: str = "PERSON"):
+    """
+    GLBA Compliance: Calculate K-Anonymity privacy score for a set of attributes.
+    """
+    try:
+        attrs = {"entity_type": type}
+        if city: attrs["city"] = city
+        if zip: attrs["zip5"] = zip
+        
+        k = privacy_scorer.calculate_anonymity_score(attrs)
+        risk = privacy_scorer.get_risk_level(k)
+        
+        return APIResponse.success({
+            "k_anonymity": k,
+            "risk_level": risk,
+            "attributes_checked": attrs
+        })
+    except Exception as e:
+        return APIResponse.error(str(e))
+
+@app.get("/api/v1/customer/{name_or_id}")
+async def get_customer(name_or_id: str, role: str = "ADMIN"):
+    """Retrieve full Customer 360 view, filtered by role-based entitlements."""
+    try:
+        # Map simple role to entitlements
+        ent_map = {
+            "RETAIL": [Entitlement.RETAIL],
+            "COMMERCIAL": [Entitlement.COMMERCIAL],
+            "WEALTH": [Entitlement.WEALTH],
+            "ADMIN": [Entitlement.ADMIN]
+        }
+        entitlements = ent_map.get(role.upper(), [Entitlement.ADMIN])
+        
+        data = assembler.get_customer_360(name_or_id, entitlements=entitlements)
+        
         if not data:
             return APIResponse.error(f"Customer '{name_or_id}' not found", code=ErrorCodes.NOT_FOUND)
         
@@ -131,22 +238,45 @@ async def get_graph_data():
         return APIResponse.error(str(e))
 
 @app.post("/api/v1/advisor/query")
-async def advisor_query(payload: Dict[str, str]):
+async def advisor_query(payload: Dict[str, Any]):
     """
     Experimental: Process an advisor query through the reasoning pipeline.
-    This simulates the S1 Reasoning flow.
+    This simulates the S1 Reasoning flow and logs results to the Audit Vault.
     """
     query = payload.get("query")
+    advisor_id = payload.get("advisor_id", "ANONYMOUS")
+    model_mode = payload.get("model_mode", "cloud") # "cloud" (Teacher) or "local" (Student)
+    
     if not query:
         return APIResponse.error("Query is required", code=ErrorCodes.INVALID_PARAMETER)
     
     try:
-        # We can use the logic from s1_advisor_demo.py
-        # For now, we'll import and use S1ReasoningEngine if available
-        # or simulate a simplified version.
         from relationship_engine.s1_advisor_demo import S1ReasoningEngine
         engine = S1ReasoningEngine()
-        result = engine.process_query(query)
+        # Pass the mode to the engine (requires update to S1ReasoningEngine.process_query signature too)
+        # Note: We need to update S1ReasoningEngine wrapper to accept this kwarg.
+        # For now, let's assume we update S1ReasoningEngine as well.
+        result = engine.process_query(query, mode=model_mode)
+        
+        # Fair Lending Check: Scan for prohibited factors
+        is_flagged, factors = fairness_monitor.scan_trace(result.get("response", ""))
+        if is_flagged:
+            result["fairness_warning"] = {
+                "flagged": True,
+                "prohibited_factors_found": factors,
+                "action": "Response sanitized for fair lending compliance"
+            }
+            result["response"] = fairness_monitor.sanitize_trace(result["response"])
+
+        # Log to Immutable Audit Vault
+        audit_vault.log_event(
+            advisor_id=advisor_id,
+            query=query,
+            reasoning_trace=result.get("reasoning_trace", []),
+            response=result.get("response", ""),
+            metadata={"source": "api_v1", "fairness_flagged": is_flagged}
+        )
+        
         return APIResponse.success(result)
     except ImportError:
         return APIResponse.error("Reasoning Engine not configured on this server")

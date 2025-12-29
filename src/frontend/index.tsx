@@ -15,6 +15,7 @@ import { generateId } from './utils';
 import DottedGlowBackground from './components/DottedGlowBackground';
 import ArtifactCard from './components/ArtifactCard';
 import SideDrawer from './components/SideDrawer';
+import RelationshipGraph from './components/RelationshipGraph';
 import { 
     ThinkingIcon, 
     UserIcon,
@@ -22,7 +23,8 @@ import {
     GridIcon,
     HomeIcon,
     ArrowLeftIcon,
-    ArrowRightIcon
+    ArrowRightIcon,
+    NetworkIcon
 } from './components/Icons';
 
 // New Icons for Enhanced Chat
@@ -65,6 +67,7 @@ function App() {
   const [sessions, setSessions] = useState<Session[]>([]);
   const [currentSessionIndex, setCurrentSessionIndex] = useState<number>(-1);
   const [focusedArtifactIndex, setFocusedArtifactIndex] = useState<number | null>(null);
+  const [isGraphOpen, setIsGraphOpen] = useState(false);
   
   const [inputValue, setInputValue] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -428,10 +431,36 @@ Include a Foundry Solution button at the end with this exact HTML structure:
 
   return (
     <>
-        <div className="profile-portal-trigger" onClick={() => setIsProfileOpen(true)}>
-            <UserIcon />
-            {unreadCount > 0 && <div className="notification-badge">{unreadCount}</div>}
+        <div className="top-actions-bar">
+            <div className="profile-portal-trigger" onClick={() => setIsProfileOpen(true)}>
+                <UserIcon />
+                {unreadCount > 0 && <div className="notification-badge">{unreadCount}</div>}
+            </div>
+            <div className="graph-explorer-trigger" onClick={() => setIsGraphOpen(true)} title="Relationship Explorer">
+                <NetworkIcon />
+            </div>
         </div>
+
+        {/* Relationship Explorer Modal */}
+        {isGraphOpen && (
+            <div className="detail-modal-overlay" onClick={() => setIsGraphOpen(false)}>
+                <div className="detail-modal-content graph-modal" onClick={e => e.stopPropagation()}>
+                    <div className="detail-modal-header">
+                        <div className="header-group">
+                            <span className="artifact-style-tag">Enterprise Intelligence</span>
+                            <h2>Unified Relationship Explorer</h2>
+                        </div>
+                        <button className="close-button" onClick={() => setIsGraphOpen(false)}>&times;</button>
+                    </div>
+                    <div className="detail-modal-body" style={{ height: '70vh' }}>
+                        <RelationshipGraph />
+                    </div>
+                    <div className="detail-modal-footer">
+                        <button className="pnc-action-btn" onClick={() => setIsGraphOpen(false)}>Return to Dashboard</button>
+                    </div>
+                </div>
+            </div>
+        )}
 
         {/* Executive Portal Side Drawer */}
         <SideDrawer isOpen={isProfileOpen} onClose={() => setIsProfileOpen(false)} title="Executive Portal">

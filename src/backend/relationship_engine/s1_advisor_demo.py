@@ -10,6 +10,7 @@ comprehensive, customer-centered answers to advisor queries.
 
 import json
 import sys
+import os
 from pathlib import Path
 from typing import Dict, Any, List, Optional
 from dataclasses import dataclass
@@ -23,6 +24,7 @@ from relationship_engine.context_assembler import (
     execute_tool,
     AVAILABLE_TOOLS
 )
+from relationship_engine.s1_neuro_symbolic import S1NeuroSymbolicEngine
 
 # ============================================================================
 # S1 REASONING TRACE FORMAT
@@ -49,6 +51,7 @@ class S1ReasoningEngine:
 
     def __init__(self):
         self.assembler = ContextAssembler()
+        self.neuro_symbolic_engine = S1NeuroSymbolicEngine()
         self.reasoning_trace: List[ReasoningStep] = []
         self.step_count = 0
 
@@ -68,7 +71,7 @@ class S1ReasoningEngine:
         self.reasoning_trace.append(step)
         return step
 
-    def process_query(self, query: str) -> Dict[str, Any]:
+    def process_query(self, query: str, mode: str = "cloud") -> Dict[str, Any]:
         """
         Process an advisor query using reasoning + tool-use.
 
@@ -80,8 +83,52 @@ class S1ReasoningEngine:
         # Step 1: Parse and understand the query
         self._add_step(
             thought=f"I received an advisor query: '{query}'. "
-                    f"Let me analyze what information is needed to answer this."
+                    f"Let me analyze what information is needed to answer this. [Mode: {mode}]"
         )
+
+        # CHECK FOR SYSTEM 2 (NEURO-SYMBOLIC) TRIGGER
+        # We delegate complex policy questions to the X-Scaling Engine
+        if "solar" in query.lower() or "policy" in query.lower() or "ltv" in query.lower():
+             self._add_step(
+                thought="This looks like a complex credit policy question requiring 'First Principles' extraction. "
+                        "Engaging System 2 (Neuro-Symbolic Engine).",
+                action=f"Delegate to S1NeuroSymbolicEngine (Mode: {mode})"
+            )
+             
+             ns_result = self.neuro_symbolic_engine.process_query(query, mode=mode)
+             
+             if ns_result.get("mode", "").startswith("System 2"):
+                 # Format the Neuro-Symbolic result into our trace format
+                 checklist = ns_result.get("checklist", "")
+                 analysis = ns_result.get("analysis", "")
+                 
+                 self._add_step(
+                     thought="Extracting 'World Model' (Checklist) from policy documents...",
+                     observation=f"Extracted Checklist:\n{checklist[:200]}..."
+                 )
+                 
+                 self._add_step(
+                     thought="Applying Checklist to the scenario (Zero-Shot Application)...",
+                     observation="Analysis Complete."
+                 )
+                 
+                 return {
+                    "query": query,
+                    "response": analysis,
+                    "reasoning_trace": [
+                        {
+                            "step": s.step_number,
+                            "thought": s.thought,
+                            "action": s.action,
+                            "tool_call": s.tool_call,
+                            "observation": s.observation
+                        }
+                        for s in self.reasoning_trace
+                    ],
+                    "tool_data": {"checklist": checklist}, # Pass checklist as tool data for inspection
+                    "artifact": ns_result.get("artifact"), # Pass the generated Flash Card
+                    "timestamp": datetime.now().isoformat()
+                }
 
         # Step 2: Identify the entities and data needed
         entities_needed = self._extract_entities(query)

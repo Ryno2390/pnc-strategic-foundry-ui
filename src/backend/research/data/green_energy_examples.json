@@ -1,0 +1,17 @@
+[
+  {
+    "scenario": "Project 'SunBelt One': 100MW Solar Farm in Arizona. 15-year PPA with Microsoft (AAA rated). Technology is standard PV panels + Tesla Megapack (Li-Ion). Fully signed ISA with CAISO. Requesting 75% LTV.",
+    "decision": "APPROVED",
+    "reasoning": "1. Revenue: Met (15yr PPA, Inv Grade off-taker). 2. Tech: Met (Tier 1 Solar/Li-Ion allows 80% LTV; request is 75%). 3. Interconnection: Met (Signed ISA). 4. Environmental: Assumed clean."
+  },
+  {
+    "scenario": "Project 'Windy Ridge': 50MW On-Shore Wind in Texas. No long-term PPA; developers plan to sell 100% of power to the ERCOT spot market to capitalize on price spikes. Turbines are standard GE models. ISA signed.",
+    "decision": "DENIED",
+    "reasoning": "Policy Violation 2.1 (Revenue): Merchant Revenue limit is 20%. Project relies on 100% merchant revenue. Volatility risk is too high for debt financing."
+  },
+  {
+    "scenario": "Project 'HydroStore': A new Flow Battery storage facility in Pennsylvania. PPA with PJM (AA rated). ISA signed. Requesting 75% LTV to cover high construction costs.",
+    "decision": "PARTIAL / FLAGGED",
+    "reasoning": "Policy Violation 2.2 (Tech Risk): Flow Batteries are Tier 2 (Emerging). Max LTV is capped at 50%, but client requested 75%. Deal can only proceed if LTV is reduced to 50% AND warranty insurance is provided."
+  }
+]
