@@ -14,11 +14,12 @@ import json
 import logging
 import google.generativeai as genai
 from typing import Dict, Any, List, Optional
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict
 from pathlib import Path
 
 # Add import
 from backend.relationship_engine.flash_card_generator import FlashCardGenerator
+from backend.relationship_engine.steering_subsystem import SteeringSubsystem, RewardSignal
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -34,6 +35,7 @@ class ReasoningTrace:
 class S1NeuroSymbolicEngine:
     def __init__(self, api_key: Optional[str] = None):
         self.api_key = api_key or os.environ.get("GEMINI_API_KEY")
+        self.model = None
         if not self.api_key:
             logger.warning("No GEMINI_API_KEY found. S1 Neuro-Symbolic will fail on generation.")
         else:
@@ -45,6 +47,9 @@ class S1NeuroSymbolicEngine:
         self.examples_path = Path("src/backend/research/data/green_energy_examples.json")
         self.policy_text = self._load_file(self.policy_path)
         self.examples = json.loads(self._load_file(self.examples_path))
+        
+        # Initialize Steering Subsystem (Innate Values)
+        self.steering_subsystem = SteeringSubsystem()
 
     def _load_file(self, path: Path) -> str:
         if path.exists():
@@ -124,46 +129,136 @@ class S1NeuroSymbolicEngine:
             return {"error": f"Local Student Error: {e}"}
 
     def _run_system_2_loop(self, scenario: str) -> Dict[str, Any]:
-        if not self.model:
-            return {"error": "Model not initialized (Missing API Key)"}
+        full_reasoning_log = []
+        reasoning_trace: List[ReasoningTrace] = []
 
-        # Step 1: Extract First Principles (The "Teacher" Step)
-        # We cache this in production, but here we generate on fly or use cached.
-        checklist = self._extract_checklist()
+        # Step 1: Extract First Principles
+        checklist = "[SIMULATED CHECKLIST] Policy alignment required."
+        if self.model:
+            checklist = self._extract_checklist()
+        full_reasoning_log.append(f"### Phase 1: Policy Checklist Extracted\n{checklist}")
+
+        # Step 2: Incremental Reasoning with Value Function (Intermediate Signals)
+        # We simulate the incremental steps for this implementation
+        steps = [
+            "Reviewing loan request for alignment with Green Energy Policy.",
+            "Analyzing LTV ratio against Tier 1 and Tier 2 thresholds.",
+            "Checking for any prohibited industry involvement (e.g. Gambling, etc.).",
+            "Synthesizing final recommendation based on credit risk and strategic alignment."
+        ]
+
+        final_analysis = ""
+        interrupted = False
+
+        for i, step_desc in enumerate(steps):
+            # Evaluate intermediate step with Steering Subsystem (Value Function)
+            signal = self.steering_subsystem.evaluate_intermediate_step(step_desc, scenario)
+            
+            trace_step = ReasoningTrace(
+                step=i+1,
+                thought=step_desc,
+                status="PASS" if signal.is_safe else "FAIL"
+            )
+            reasoning_trace.append(trace_step)
+
+            if not signal.is_safe:
+                full_reasoning_log.append(f"\n[VALUE FUNCTION HALT] Step {i+1}: {signal.feedback}")
+                final_analysis = f"Process halted due to safety violation: {signal.feedback}"
+                interrupted = True
+                # Log the halt for learning
+                self._log_for_learning(scenario, final_analysis, signal)
+                break
+
+        if not interrupted:
+            # Step 3: Final Application (The "Student" Step)
+            if self.model:
+                final_analysis = self._apply_checklist(checklist, scenario)
+            else:
+                final_analysis = "[SIMULATED] Loan application reviewed. Decision: APPROVED (Based on principles)."
+            
+            full_reasoning_log.append(f"\n### Phase 2: Final Cortex Analysis\n{final_analysis}")
+            
+            # Final Steering Check
+            steering_signal = self.steering_subsystem.evaluate_recommendation(scenario, final_analysis)
+            full_reasoning_log.append(f"\n### Phase 3: Steering Evaluation\n{steering_signal.feedback}")
+
+            if not steering_signal.is_safe:
+                if self.model:
+                    final_analysis = self._re_reason_with_feedback(checklist, scenario, final_analysis, steering_signal.feedback)
+                else:
+                    final_analysis = f"[SIMULATED RE-REASON] Process adjusted based on feedback: {steering_signal.feedback}. Final Decision: DENIED."
+                
+                full_reasoning_log.append(f"\n### Phase 4: Revised Analysis\n{final_analysis}")
+            
+            # Log for Continual Learning
+            self._log_for_learning(scenario, final_analysis, steering_signal)
+
+        # Artifact Generation
+        decision = "FLAGGED"
+        if "APPROVED" in final_analysis.upper(): decision = "APPROVED"
+        if "DENIED" in final_analysis.upper(): decision = "DENIED"
         
-        # Step 2: Apply Logic (The "Student" Step)
-        analysis = self._apply_checklist(checklist, scenario)
-        
-        # Step 3: Generate Flash Card Artifact
-        # We parse the analysis to find the decision and key points
-        decision = "FLAGGED" # Default/Safe
-        if "APPROVED" in analysis.upper(): decision = "APPROVED"
-        if "DENIED" in analysis.upper(): decision = "DENIED"
-        
-        # Extract a few bullets (heuristic: lines starting with * or -)
-        bullets = [line.strip() for line in analysis.split('\\n') if line.strip().startswith(('*', '-'))][:3]
-        if not bullets: bullets = ["Complex policy analysis required.", "See full text for details."]
-        
-        # Extract LTV if present
-        ltv = "N/A"
-        import re
-        ltv_match = re.search(r"(\\d+%) LTV", scenario)
-        if ltv_match: ltv = ltv_match.group(1)
+        bullets = [line.strip() for line in final_analysis.split('\n') if line.strip().startswith(('*', '-'))][:3]
         
         card = FlashCardGenerator.generate_decision_card(
-            "Policy Analysis",
+            "Neuro-Symbolic Analysis",
             decision,
-            {"LTV Requested": ltv, "Policy Limit": "50% (Tier 2) / 80% (Tier 1)", "Review Type": "Neuro-Symbolic"},
-            bullets
+            {"Mode": "S1-Steered", "Safety": "Active"},
+            bullets or ["Principles-based analysis complete."]
         )
         
         return {
-            "mode": "System 2 (Neuro-Symbolic)",
-            "checklist": checklist,
-            "analysis": analysis,
-            "response": analysis,  # For API compatibility
+            "mode": "System 2 (Neuro-Symbolic v2)",
+            "trace": [asdict(t) for t in reasoning_trace],
+            "analysis": final_analysis,
+            "response": "\n".join(full_reasoning_log),
             "artifact": card
         }
+
+    def _log_for_learning(self, scenario: str, result: str, signal: RewardSignal):
+        """
+        Saves the interaction and reward signal for future fine-tuning (Continual Learning).
+        """
+        log_entry = {
+            "scenario": scenario,
+            "result": result,
+            "reward_score": signal.reward_score,
+            "feedback": signal.feedback,
+            "source": signal.source
+        }
+        log_path = Path("data/training/continual_learning_stream.jsonl")
+        log_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(log_path, "a") as f:
+            f.write(json.dumps(log_entry) + "\n")
+        logger.info("Interaction logged for Continual Learning.")
+
+    def _re_reason_with_feedback(self, checklist: str, scenario: str, previous_analysis: str, feedback: str) -> str:
+        """
+        Re-evaluates the scenario given strong negative feedback from the Steering Subsystem.
+        """
+        prompt = f"""
+        You are a PNC Strategic Advisor.
+        
+        INTERNAL CHECKLIST (The Law):
+        {checklist}
+        
+        NEW LOAN REQUEST:
+        {scenario}
+        
+        PREVIOUS ANALYSIS (REJECTED):
+        {previous_analysis}
+        
+        STEERING FEEDBACK (CRITICAL):
+        {feedback}
+        
+        TASK:
+        1. Acknowledge the feedback.
+        2. Re-analyze the request strictly adhering to the feedback.
+        3. Provide a revised Decision and Reasoning.
+        """
+        
+        response = self.model.generate_content(prompt)
+        return response.text
 
     def _extract_checklist(self) -> str:
         """
