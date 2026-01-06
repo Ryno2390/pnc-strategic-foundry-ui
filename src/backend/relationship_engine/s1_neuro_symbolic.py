@@ -20,6 +20,8 @@ from pathlib import Path
 # Add import
 from backend.relationship_engine.flash_card_generator import FlashCardGenerator
 from backend.relationship_engine.steering_subsystem import SteeringSubsystem, RewardSignal
+from backend.policy_graph_engine import PolicyGraphEngine
+from backend.risk_graph import RiskGraph
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -31,6 +33,7 @@ class ReasoningTrace:
     thought: str
     checklist_item: Optional[str] = None
     status: Optional[str] = None # PASS / FAIL / WARN
+    graph_path: Optional[List[str]] = None # New: Audit-Ready Graph Trace
 
 class S1NeuroSymbolicEngine:
     def __init__(self, api_key: Optional[str] = None):
@@ -43,10 +46,19 @@ class S1NeuroSymbolicEngine:
             self.model = genai.GenerativeModel('gemini-2.0-flash')
         
         # Load local policies (simulated retrieval for now)
+        project_root = Path(__file__).parent.parent.parent.parent
+        self.policy_engine = PolicyGraphEngine(
+            persist_dir=str(project_root / "data" / "policy_index"),
+            graph_path=str(project_root / "data" / "risk_graph.json")
+        )
+        
         self.policy_path = Path("data/policies/pnc_green_energy_transition_policy.md")
         self.examples_path = Path("src/backend/research/data/green_energy_examples.json")
         self.policy_text = self._load_file(self.policy_path)
-        self.examples = json.loads(self._load_file(self.examples_path))
+        if self.examples_path.exists():
+            self.examples = json.loads(self._load_file(self.examples_path))
+        else:
+            self.examples = []
         
         # Initialize Steering Subsystem (Innate Values)
         self.steering_subsystem = SteeringSubsystem()
@@ -132,6 +144,18 @@ class S1NeuroSymbolicEngine:
         full_reasoning_log = []
         reasoning_trace: List[ReasoningTrace] = []
 
+        # New: Phase 0 - Graph-Based Risk Identification (Context Graph)
+        graph_impact = []
+        # Identify core policy node from query (heuristic for demo)
+        if "sba" in scenario.lower():
+            graph_impact = self.policy_engine.query_graph("SBA_7A_LOAN_POLICY")
+        elif "green" in scenario.lower() or "solar" in scenario.lower():
+            graph_impact = self.policy_engine.query_graph("PNC_GREEN_ENERGY_TRANSITION_POLICY")
+
+        if graph_impact:
+            graph_paths = [ " -> ".join(p['path']) for p in graph_impact[:3]] # Take top 3 paths
+            full_reasoning_log.append(f"### Phase 0: Context Graph Traversal (Audit Trace)\n" + "\n".join([f"- {path}" for path in graph_paths]))
+        
         # Step 1: Extract First Principles
         checklist = "[SIMULATED CHECKLIST] Policy alignment required."
         if self.model:
@@ -141,9 +165,9 @@ class S1NeuroSymbolicEngine:
         # Step 2: Incremental Reasoning with Value Function (Intermediate Signals)
         # We simulate the incremental steps for this implementation
         steps = [
-            "Reviewing loan request for alignment with Green Energy Policy.",
-            "Analyzing LTV ratio against Tier 1 and Tier 2 thresholds.",
-            "Checking for any prohibited industry involvement (e.g. Gambling, etc.).",
+            "Reviewing loan request for alignment with Policy.",
+            "Analyzing specific requirements identified in the Context Graph.",
+            "Checking for any prohibited industry involvement or risk contagion.",
             "Synthesizing final recommendation based on credit risk and strategic alignment."
         ]
 
@@ -154,10 +178,16 @@ class S1NeuroSymbolicEngine:
             # Evaluate intermediate step with Steering Subsystem (Value Function)
             signal = self.steering_subsystem.evaluate_intermediate_step(step_desc, scenario)
             
+            # Attach graph path to the most relevant step for audit
+            relevant_graph_path = None
+            if i == 1 and graph_impact:
+                relevant_graph_path = graph_impact[0]['path']
+
             trace_step = ReasoningTrace(
                 step=i+1,
                 thought=step_desc,
-                status="PASS" if signal.is_safe else "FAIL"
+                status="PASS" if signal.is_safe else "FAIL",
+                graph_path=relevant_graph_path
             )
             reasoning_trace.append(trace_step)
 

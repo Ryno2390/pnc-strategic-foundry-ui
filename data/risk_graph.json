@@ -1,0 +1,1013 @@
+{
+  "nodes": {
+    "RESIDENTIAL_MORTGAGE_POLICY": {
+      "type": "PolicyDocument",
+      "properties": {
+        "filename": "residential_mortgage_policy.md"
+      }
+    },
+    "RESIDENTIAL_MORTGAGE_POLICY_0": {
+      "type": "PolicySection",
+      "properties": {
+        "title": "PNC Internal Policy: Mortgage Underwriting Guidelines - Residential"
+      }
+    },
+    "RESIDENTIAL_MORTGAGE_POLICY_1": {
+      "type": "PolicySection",
+      "properties": {
+        "title": "Overview"
+      }
+    },
+    "RESIDENTIAL_MORTGAGE_POLICY_2": {
+      "type": "PolicySection",
+      "properties": {
+        "title": "Credit Requirements"
+      }
+    },
+    "RESIDENTIAL_MORTGAGE_POLICY_3": {
+      "type": "PolicySection",
+      "properties": {
+        "title": "Income and Employment"
+      }
+    },
+    "RESIDENTIAL_MORTGAGE_POLICY_4": {
+      "type": "PolicySection",
+      "properties": {
+        "title": "Debt-to-Income (DTI) Limits"
+      }
+    },
+    "RESIDENTIAL_MORTGAGE_POLICY_5": {
+      "type": "PolicySection",
+      "properties": {
+        "title": "Loan-to-Value (LTV) Limits"
+      }
+    },
+    "PNC_GREEN_ENERGY_TRANSITION_POLICY": {
+      "type": "PolicyDocument",
+      "properties": {
+        "filename": "pnc_green_energy_transition_policy.md"
+      }
+    },
+    "PNC_GREEN_ENERGY_TRANSITION_POLICY_0": {
+      "type": "PolicySection",
+      "properties": {
+        "title": "PNC POLICY ID: CIB-RE-2025-004"
+      }
+    },
+    "PNC_GREEN_ENERGY_TRANSITION_POLICY_1": {
+      "type": "PolicySection",
+      "properties": {
+        "title": "1. PURPOSE"
+      }
+    },
+    "PNC_GREEN_ENERGY_TRANSITION_POLICY_2": {
+      "type": "PolicySection",
+      "properties": {
+        "title": "2. CORE UNDERWRITING CRITERIA"
+      }
+    },
+    "PNC_GREEN_ENERGY_TRANSITION_POLICY_3": {
+      "type": "PolicySection",
+      "properties": {
+        "title": "2.1. Revenue Stability (The PPA Rule)"
+      }
+    },
+    "PNC_GREEN_ENERGY_TRANSITION_POLICY_4": {
+      "type": "PolicySection",
+      "properties": {
+        "title": "2.2. Technology Risk & Loan-to-Value (LTV) Limits"
+      }
+    },
+    "PNC_GREEN_ENERGY_TRANSITION_POLICY_5": {
+      "type": "PolicySection",
+      "properties": {
+        "title": "2.3. Interconnection Status"
+      }
+    },
+    "PNC_GREEN_ENERGY_TRANSITION_POLICY_6": {
+      "type": "PolicySection",
+      "properties": {
+        "title": "2.4. Environmental & Permitting"
+      }
+    },
+    "SBA_7A_LOAN_POLICY": {
+      "type": "PolicyDocument",
+      "properties": {
+        "filename": "sba_7a_loan_policy.md"
+      }
+    },
+    "SBA_7A_LOAN_POLICY_0": {
+      "type": "PolicySection",
+      "properties": {
+        "title": "PNC Internal Policy: Small Business Administration (SBA) 7(a) Loan Guidelines"
+      }
+    },
+    "SBA_7A_LOAN_POLICY_1": {
+      "type": "PolicySection",
+      "properties": {
+        "title": "Overview"
+      }
+    },
+    "SBA_7A_LOAN_POLICY_2": {
+      "type": "PolicySection",
+      "properties": {
+        "title": "Eligibility Requirements"
+      }
+    },
+    "REQ_DSCR": {
+      "type": "Requirement",
+      "properties": {
+        "type": "DSCR",
+        "value": "1",
+        "context": "## Eligibility Requirements\nTo qualify for an SBA 7(a) loan through PNC, the applicant must meet the..."
+      }
+    },
+    "RISK_NON_COMPLIANCE_DSCR": {
+      "type": "Risk",
+      "properties": {
+        "description": "Failure to meet DSCR threshold"
+      }
+    },
+    "REQ_CREDIT_SCORE": {
+      "type": "Requirement",
+      "properties": {
+        "type": "Credit Score",
+        "value": "680",
+        "context": "## Eligibility Requirements\nTo qualify for an SBA 7(a) loan through PNC, the applicant must meet the..."
+      }
+    },
+    "RISK_NON_COMPLIANCE_CREDIT_SCORE": {
+      "type": "Risk",
+      "properties": {
+        "description": "Failure to meet Credit Score threshold"
+      }
+    },
+    "REQ_DTI": {
+      "type": "Requirement",
+      "properties": {
+        "type": "DTI",
+        "value": "43%",
+        "context": "## Eligibility Requirements\nTo qualify for an SBA 7(a) loan through PNC, the applicant must meet the..."
+      }
+    },
+    "RISK_NON_COMPLIANCE_DTI": {
+      "type": "Risk",
+      "properties": {
+        "description": "Failure to meet DTI threshold"
+      }
+    },
+    "SBA_7A_LOAN_POLICY_3": {
+      "type": "PolicySection",
+      "properties": {
+        "title": "Use of Funds"
+      }
+    },
+    "SBA_7A_LOAN_POLICY_4": {
+      "type": "PolicySection",
+      "properties": {
+        "title": "Guarantee Requirements"
+      }
+    },
+    "UNI-0001": {
+      "type": "Entity",
+      "properties": {
+        "name": "DAVID JOHNSON",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0002": {
+      "type": "Entity",
+      "properties": {
+        "name": "DAVID SMITH",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0003": {
+      "type": "Entity",
+      "properties": {
+        "name": "MICHAEL JOHNSON",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0004": {
+      "type": "Entity",
+      "properties": {
+        "name": "LINDA DAVIS",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0005": {
+      "type": "Entity",
+      "properties": {
+        "name": "JOHN CHEN",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0006": {
+      "type": "Entity",
+      "properties": {
+        "name": "JOHN SMITH",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0007": {
+      "type": "Entity",
+      "properties": {
+        "name": "JOHN JOHNSON",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0008": {
+      "type": "Entity",
+      "properties": {
+        "name": "WILLIAM DAVIS",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0009": {
+      "type": "Entity",
+      "properties": {
+        "name": "JOHN GARCIA",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0010": {
+      "type": "Entity",
+      "properties": {
+        "name": "MICHAEL SMITH",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0011": {
+      "type": "Entity",
+      "properties": {
+        "name": "ROBERT O'BRIEN",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0012": {
+      "type": "Entity",
+      "properties": {
+        "name": "MARIA DAVIS",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0013": {
+      "type": "Entity",
+      "properties": {
+        "name": "JANE CHEN",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0014": {
+      "type": "Entity",
+      "properties": {
+        "name": "DAVID CHEN",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0015": {
+      "type": "Entity",
+      "properties": {
+        "name": "ROBERT DAVIS",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0016": {
+      "type": "Entity",
+      "properties": {
+        "name": "DAVID JOHNSON",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0017": {
+      "type": "Entity",
+      "properties": {
+        "name": "MICHAEL JOHNSON",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0018": {
+      "type": "Entity",
+      "properties": {
+        "name": "MARIA O'BRIEN",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0019": {
+      "type": "Entity",
+      "properties": {
+        "name": "LINDA SMITH",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0020": {
+      "type": "Entity",
+      "properties": {
+        "name": "ROBERT SMITH",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0021": {
+      "type": "Entity",
+      "properties": {
+        "name": "LINDA SMITH",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0022": {
+      "type": "Entity",
+      "properties": {
+        "name": "DAVID MILLER",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0023": {
+      "type": "Entity",
+      "properties": {
+        "name": "MARIA MILLER",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0024": {
+      "type": "Entity",
+      "properties": {
+        "name": "ELIZABETH TORRES",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0025": {
+      "type": "Entity",
+      "properties": {
+        "name": "ROBERT DAVIS",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0026": {
+      "type": "Entity",
+      "properties": {
+        "name": "MARIA O'BRIEN",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0027": {
+      "type": "Entity",
+      "properties": {
+        "name": "DAVID RODRIGUEZ",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0028": {
+      "type": "Entity",
+      "properties": {
+        "name": "JOHN SMITH",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0029": {
+      "type": "Entity",
+      "properties": {
+        "name": "JANE JOHNSON",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0030": {
+      "type": "Entity",
+      "properties": {
+        "name": "DAVID WILSON",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0031": {
+      "type": "Entity",
+      "properties": {
+        "name": "ELIZABETH MILLER",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0032": {
+      "type": "Entity",
+      "properties": {
+        "name": "DAVID JOHNSON",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0033": {
+      "type": "Entity",
+      "properties": {
+        "name": "LINDA JOHNSON",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0034": {
+      "type": "Entity",
+      "properties": {
+        "name": "SARAH JOHNSON",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0035": {
+      "type": "Entity",
+      "properties": {
+        "name": "MARIA O'BRIEN",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0036": {
+      "type": "Entity",
+      "properties": {
+        "name": "LINDA O'BRIEN",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0037": {
+      "type": "Entity",
+      "properties": {
+        "name": "DAVID RODRIGUEZ",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0038": {
+      "type": "Entity",
+      "properties": {
+        "name": "JOHN MILLER",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0039": {
+      "type": "Entity",
+      "properties": {
+        "name": "MARIA CHEN",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0040": {
+      "type": "Entity",
+      "properties": {
+        "name": "WILLIAM TORRES",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0041": {
+      "type": "Entity",
+      "properties": {
+        "name": "JANE SMITH",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0042": {
+      "type": "Entity",
+      "properties": {
+        "name": "JOHNSON VENTURES LLC",
+        "type": "BUSINESS"
+      }
+    },
+    "UNI-0043": {
+      "type": "Entity",
+      "properties": {
+        "name": "GARCIA VENTURES LLC",
+        "type": "BUSINESS"
+      }
+    },
+    "UNI-0044": {
+      "type": "Entity",
+      "properties": {
+        "name": "DAVIS CONSULTING LLC",
+        "type": "BUSINESS"
+      }
+    },
+    "UNI-0045": {
+      "type": "Entity",
+      "properties": {
+        "name": "JOHNSON CONSULTING LLC",
+        "type": "BUSINESS"
+      }
+    },
+    "UNI-0046": {
+      "type": "Entity",
+      "properties": {
+        "name": "O'BRIEN VENTURES LLC",
+        "type": "BUSINESS"
+      }
+    },
+    "UNI-0047": {
+      "type": "Entity",
+      "properties": {
+        "name": "SMITH VENTURES LLC",
+        "type": "BUSINESS"
+      }
+    },
+    "UNI-0048": {
+      "type": "Entity",
+      "properties": {
+        "name": "SMITH CONSULTING LLC",
+        "type": "BUSINESS"
+      }
+    },
+    "UNI-0049": {
+      "type": "Entity",
+      "properties": {
+        "name": "MILLER VENTURES LLC",
+        "type": "BUSINESS"
+      }
+    },
+    "UNI-0050": {
+      "type": "Entity",
+      "properties": {
+        "name": "MILLER GROUP LLC",
+        "type": "BUSINESS"
+      }
+    },
+    "UNI-0051": {
+      "type": "Entity",
+      "properties": {
+        "name": "DAVIS VENTURES LLC",
+        "type": "BUSINESS"
+      }
+    },
+    "UNI-0052": {
+      "type": "Entity",
+      "properties": {
+        "name": "SMITH CONSULTING LLC",
+        "type": "BUSINESS"
+      }
+    },
+    "UNI-0053": {
+      "type": "Entity",
+      "properties": {
+        "name": "JOHNSON PROPERTIES LLC",
+        "type": "BUSINESS"
+      }
+    },
+    "UNI-0054": {
+      "type": "Entity",
+      "properties": {
+        "name": "WILSON CONSULTING LLC",
+        "type": "BUSINESS"
+      }
+    },
+    "UNI-0055": {
+      "type": "Entity",
+      "properties": {
+        "name": "O'BRIEN PROPERTIES LLC",
+        "type": "BUSINESS"
+      }
+    },
+    "UNI-0056": {
+      "type": "Entity",
+      "properties": {
+        "name": "RODRIGUEZ CONSULTING LLC",
+        "type": "BUSINESS"
+      }
+    },
+    "UNI-0057": {
+      "type": "Entity",
+      "properties": {
+        "name": "CHEN GROUP LLC",
+        "type": "BUSINESS"
+      }
+    },
+    "UNI-0058": {
+      "type": "Entity",
+      "properties": {
+        "name": "TORRES VENTURES LLC",
+        "type": "BUSINESS"
+      }
+    },
+    "UNI-0059": {
+      "type": "Entity",
+      "properties": {
+        "name": "JOHNSON PROPERTIES LLC",
+        "type": "BUSINESS"
+      }
+    },
+    "UNI-0060": {
+      "type": "Entity",
+      "properties": {
+        "name": "JOHN O SMITH",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0061": {
+      "type": "Entity",
+      "properties": {
+        "name": "JOHN U JOHNSON",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0062": {
+      "type": "Entity",
+      "properties": {
+        "name": "MICHAEL E SMITH",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0063": {
+      "type": "Entity",
+      "properties": {
+        "name": "ROBERT W DAVIS",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0064": {
+      "type": "Entity",
+      "properties": {
+        "name": "MARIA F O'BRIEN",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0065": {
+      "type": "Entity",
+      "properties": {
+        "name": "LINDA V SMITH",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0066": {
+      "type": "Entity",
+      "properties": {
+        "name": "ROBERT P SMITH",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0067": {
+      "type": "Entity",
+      "properties": {
+        "name": "LINDA R SMITH",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0068": {
+      "type": "Entity",
+      "properties": {
+        "name": "ELIZABETH E TORRES",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0069": {
+      "type": "Entity",
+      "properties": {
+        "name": "DAVID O RODRIGUEZ",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0070": {
+      "type": "Entity",
+      "properties": {
+        "name": "DAVID G TORRES",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0071": {
+      "type": "Entity",
+      "properties": {
+        "name": "ELIZABETH H TORRES",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0072": {
+      "type": "Entity",
+      "properties": {
+        "name": "DAVID Q WILSON",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0073": {
+      "type": "Entity",
+      "properties": {
+        "name": "ELIZABETH I MILLER",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0074": {
+      "type": "Entity",
+      "properties": {
+        "name": "SARAH P JOHNSON",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0075": {
+      "type": "Entity",
+      "properties": {
+        "name": "LINDA S O'BRIEN",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0076": {
+      "type": "Entity",
+      "properties": {
+        "name": "MARIA Z CHEN",
+        "type": "PERSON"
+      }
+    },
+    "UNI-0077": {
+      "type": "Entity",
+      "properties": {
+        "name": "JANE T SMITH",
+        "type": "PERSON"
+      }
+    }
+  },
+  "edges": [
+    {
+      "source": "RESIDENTIAL_MORTGAGE_POLICY",
+      "target": "RESIDENTIAL_MORTGAGE_POLICY_0",
+      "rel_type": "HAS_SECTION"
+    },
+    {
+      "source": "RESIDENTIAL_MORTGAGE_POLICY",
+      "target": "RESIDENTIAL_MORTGAGE_POLICY_1",
+      "rel_type": "HAS_SECTION"
+    },
+    {
+      "source": "RESIDENTIAL_MORTGAGE_POLICY",
+      "target": "RESIDENTIAL_MORTGAGE_POLICY_2",
+      "rel_type": "HAS_SECTION"
+    },
+    {
+      "source": "RESIDENTIAL_MORTGAGE_POLICY",
+      "target": "RESIDENTIAL_MORTGAGE_POLICY_3",
+      "rel_type": "HAS_SECTION"
+    },
+    {
+      "source": "RESIDENTIAL_MORTGAGE_POLICY",
+      "target": "RESIDENTIAL_MORTGAGE_POLICY_4",
+      "rel_type": "HAS_SECTION"
+    },
+    {
+      "source": "RESIDENTIAL_MORTGAGE_POLICY",
+      "target": "RESIDENTIAL_MORTGAGE_POLICY_5",
+      "rel_type": "HAS_SECTION"
+    },
+    {
+      "source": "PNC_GREEN_ENERGY_TRANSITION_POLICY",
+      "target": "PNC_GREEN_ENERGY_TRANSITION_POLICY_0",
+      "rel_type": "HAS_SECTION"
+    },
+    {
+      "source": "PNC_GREEN_ENERGY_TRANSITION_POLICY",
+      "target": "PNC_GREEN_ENERGY_TRANSITION_POLICY_1",
+      "rel_type": "HAS_SECTION"
+    },
+    {
+      "source": "PNC_GREEN_ENERGY_TRANSITION_POLICY",
+      "target": "PNC_GREEN_ENERGY_TRANSITION_POLICY_2",
+      "rel_type": "HAS_SECTION"
+    },
+    {
+      "source": "PNC_GREEN_ENERGY_TRANSITION_POLICY",
+      "target": "PNC_GREEN_ENERGY_TRANSITION_POLICY_3",
+      "rel_type": "HAS_SECTION"
+    },
+    {
+      "source": "PNC_GREEN_ENERGY_TRANSITION_POLICY",
+      "target": "PNC_GREEN_ENERGY_TRANSITION_POLICY_4",
+      "rel_type": "HAS_SECTION"
+    },
+    {
+      "source": "PNC_GREEN_ENERGY_TRANSITION_POLICY",
+      "target": "PNC_GREEN_ENERGY_TRANSITION_POLICY_5",
+      "rel_type": "HAS_SECTION"
+    },
+    {
+      "source": "PNC_GREEN_ENERGY_TRANSITION_POLICY",
+      "target": "PNC_GREEN_ENERGY_TRANSITION_POLICY_6",
+      "rel_type": "HAS_SECTION"
+    },
+    {
+      "source": "SBA_7A_LOAN_POLICY",
+      "target": "SBA_7A_LOAN_POLICY_0",
+      "rel_type": "HAS_SECTION"
+    },
+    {
+      "source": "SBA_7A_LOAN_POLICY",
+      "target": "SBA_7A_LOAN_POLICY_1",
+      "rel_type": "HAS_SECTION"
+    },
+    {
+      "source": "SBA_7A_LOAN_POLICY",
+      "target": "SBA_7A_LOAN_POLICY_2",
+      "rel_type": "HAS_SECTION"
+    },
+    {
+      "source": "SBA_7A_LOAN_POLICY_2",
+      "target": "REQ_DSCR",
+      "rel_type": "STIPULATES"
+    },
+    {
+      "source": "REQ_DSCR",
+      "target": "RISK_NON_COMPLIANCE_DSCR",
+      "rel_type": "TRIGGERS_ON_FAILURE"
+    },
+    {
+      "source": "SBA_7A_LOAN_POLICY_2",
+      "target": "REQ_CREDIT_SCORE",
+      "rel_type": "STIPULATES"
+    },
+    {
+      "source": "REQ_CREDIT_SCORE",
+      "target": "RISK_NON_COMPLIANCE_CREDIT_SCORE",
+      "rel_type": "TRIGGERS_ON_FAILURE"
+    },
+    {
+      "source": "SBA_7A_LOAN_POLICY_2",
+      "target": "REQ_DTI",
+      "rel_type": "STIPULATES"
+    },
+    {
+      "source": "REQ_DTI",
+      "target": "RISK_NON_COMPLIANCE_DTI",
+      "rel_type": "TRIGGERS_ON_FAILURE"
+    },
+    {
+      "source": "SBA_7A_LOAN_POLICY",
+      "target": "SBA_7A_LOAN_POLICY_3",
+      "rel_type": "HAS_SECTION"
+    },
+    {
+      "source": "SBA_7A_LOAN_POLICY",
+      "target": "SBA_7A_LOAN_POLICY_4",
+      "rel_type": "HAS_SECTION"
+    },
+    {
+      "source": "UNI-0042",
+      "target": "SBA_7A_LOAN_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0043",
+      "target": "SBA_7A_LOAN_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0044",
+      "target": "SBA_7A_LOAN_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0045",
+      "target": "SBA_7A_LOAN_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0046",
+      "target": "SBA_7A_LOAN_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0047",
+      "target": "SBA_7A_LOAN_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0048",
+      "target": "SBA_7A_LOAN_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0049",
+      "target": "SBA_7A_LOAN_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0050",
+      "target": "SBA_7A_LOAN_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0051",
+      "target": "SBA_7A_LOAN_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0052",
+      "target": "SBA_7A_LOAN_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0053",
+      "target": "SBA_7A_LOAN_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0054",
+      "target": "SBA_7A_LOAN_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0055",
+      "target": "SBA_7A_LOAN_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0056",
+      "target": "SBA_7A_LOAN_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0057",
+      "target": "SBA_7A_LOAN_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0058",
+      "target": "SBA_7A_LOAN_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0059",
+      "target": "SBA_7A_LOAN_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0060",
+      "target": "RESIDENTIAL_MORTGAGE_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0061",
+      "target": "RESIDENTIAL_MORTGAGE_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0062",
+      "target": "RESIDENTIAL_MORTGAGE_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0063",
+      "target": "RESIDENTIAL_MORTGAGE_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0064",
+      "target": "RESIDENTIAL_MORTGAGE_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0065",
+      "target": "RESIDENTIAL_MORTGAGE_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0066",
+      "target": "RESIDENTIAL_MORTGAGE_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0067",
+      "target": "RESIDENTIAL_MORTGAGE_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0068",
+      "target": "RESIDENTIAL_MORTGAGE_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0069",
+      "target": "RESIDENTIAL_MORTGAGE_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0070",
+      "target": "RESIDENTIAL_MORTGAGE_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0071",
+      "target": "RESIDENTIAL_MORTGAGE_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0072",
+      "target": "RESIDENTIAL_MORTGAGE_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0073",
+      "target": "RESIDENTIAL_MORTGAGE_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0074",
+      "target": "RESIDENTIAL_MORTGAGE_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0075",
+      "target": "RESIDENTIAL_MORTGAGE_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0076",
+      "target": "RESIDENTIAL_MORTGAGE_POLICY",
+      "rel_type": "SUBJECT_TO"
+    },
+    {
+      "source": "UNI-0077",
+      "target": "RESIDENTIAL_MORTGAGE_POLICY",
+      "rel_type": "SUBJECT_TO"
+    }
+  ]
+}
