@@ -74,6 +74,12 @@ src/backend/adapters/
 credentials.json
 
 # ===================
+# Debug / Working Files
+# ===================
+debug_tmp/
+prompt.txt
+
+# ===================
 # Generated traces (can be regenerated)
 # ===================
 .flywheel_state.json
